@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">CiosCarr</string>
+    <string name="signIn_head">Welcome ! Please Sign In ....</string>
+    <string name="ID_placeholder">Enter Your ID</string>
+    <string name="Pass_placeholder">Enter Your Password</string>
+    <string name="signUp">Don\'t Have Any Account Yet ?<u><font color="#0000FF">Sign Up Now !</font></u></string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email_address">Email Address</string>
+    <string name="contact_no">Contact No</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="sign_up_for_an_account">Sign Up for an account</string>
+    <string name="username">Username</string>
+    <string name="title_activity_booking">booking</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="purpose_for_rental">Purpose for rental</string>
+    <string name="ic_number">IC number</string>
+    <string name="privacy_policy">Our <u><font color="#0000FF">Privacy Policy</font></u> explain how we use and protect your personal information</string>
+    <string name="continue1">Continue</string>
+    <string name="payable_today">Payable Today</string>
+    <string name="booking_summary">Booking Summary</string>
+    <string name="card_number">Card Number</string>
+    <string name="name_on_card">Name On Card</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="cvv">CVV</string>
+    <string name="book_now_100_secure">Book Now - 100 % Secure</string>
+    <string name="choose_time">Choose Time</string>
+    <string name="search">Search</string>
+    <string name="pick_up">Pick-up :</string>
+    <string name="payment_details">Payment Details :</string>
+    <string name="date_time_location">Date time location</string>
+    <string name="drop_off">Drop-Off :</string>
+    <string name="car_name">Car Name</string>
+</resources>

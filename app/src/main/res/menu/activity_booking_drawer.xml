@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_reservation"
+            android:icon="@drawable/ic_car"
+            android:title="Reservation" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_person"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_paymentMethod"
+            android:icon="@drawable/ic_card"
+            android:title="Payment Method" />
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_history_black_24dp"
+            android:title="Booking History" />
+    </group>
+
+    <item android:title="About Us">
+        <menu>
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/ic_contact"
+                android:title="Contact Us" />
+            <item
+                android:id="@+id/nav_privacy"
+                android:icon="@drawable/ic_note_black_24dp"
+                android:title="Policy" />
+        </menu>
+    </item>
+
+</menu>
