@@ -1,6 +1,7 @@
 package com.example.user.cioscarr;
 
 import android.content.Intent;
+import android.se.omapi.Session;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,7 +35,7 @@ public class Login extends AppCompatActivity {
 
         //Sign in ( need link with db)
 
-        if(id.equals("alpha")&&pass.equals("alpha")){
+        if(id.equalsIgnoreCase("alpha")&&pass.equalsIgnoreCase("alpha")){
             Intent intent = new Intent(this,reservation.class);
             startActivity(intent);
         }else{
