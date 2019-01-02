@@ -1,12 +1,19 @@
 package com.example.user.cioscarr;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.se.omapi.Session;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
+
+import java.util.List;
 
 
 public class Login extends AppCompatActivity {
@@ -28,7 +35,12 @@ public class Login extends AppCompatActivity {
         txtId = findViewById(R.id.txtUsername);
         txtPass = findViewById(R.id.txtPass);
 
+
     }
+    public static final String Extra_Message1 = "com.example.user.cioscarr.Extra_Message1";
+    public static final String Extra_Message = "com.example.user.cioscarr.Extra_Message1";
+
+    private SupplierViewModel personViewModel;
     public void signIn(View view){
         String id = txtId.getText().toString();
         String pass = txtPass.getText().toString();
@@ -39,7 +51,13 @@ public class Login extends AppCompatActivity {
             Intent intent = new Intent(this,reservation.class);
             startActivity(intent);
         }else{
-            Intent intent = new Intent(this,Register.class);
+
+            Intent intent = new Intent(this,dbArchitecture.class);
+                    personViewModel = ViewModelProviders.of(this).get(SupplierViewModel.class);
+        Supplier person = new Supplier("S0001",
+                "teikChun","01223131313",
+                "213112313","gg");
+        personViewModel.insert(person);
             startActivity(intent);
         }
 
