@@ -20,9 +20,18 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url 'http://www.idescout.com/maven/repo/'
+            name 'IDEScout, Inc.'
+        }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext {
+    roomVersion = '1.1.1'
+    archLifecycleVersion = '1.1.1'
 }
