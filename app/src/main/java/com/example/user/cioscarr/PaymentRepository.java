@@ -4,6 +4,9 @@ import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 
+import com.example.user.cioscarr.DAO.PaymentDAO;
+import com.example.user.cioscarr.entity.Payment_for_db;
+
 import java.util.List;
 
 public class PaymentRepository {

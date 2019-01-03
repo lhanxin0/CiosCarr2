@@ -4,8 +4,8 @@ import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 
-import com.example.user.cioscarr.Person;
-import com.example.user.cioscarr.PersonRoomDatabase;
+import com.example.user.cioscarr.DAO.personInterface;
+import com.example.user.cioscarr.entity.Person;
 
 import java.util.List;
 

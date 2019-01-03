@@ -8,7 +8,18 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
-import java.util.Date;
+import com.example.user.cioscarr.DAO.PaymentDAO;
+import com.example.user.cioscarr.DAO.carDAO;
+import com.example.user.cioscarr.DAO.orderDAO;
+import com.example.user.cioscarr.DAO.order_carDAO;
+import com.example.user.cioscarr.DAO.personInterface;
+import com.example.user.cioscarr.DAO.supplierDAO;
+import com.example.user.cioscarr.entity.Car;
+import com.example.user.cioscarr.entity.Order;
+import com.example.user.cioscarr.entity.Order_car;
+import com.example.user.cioscarr.entity.Payment_for_db;
+import com.example.user.cioscarr.entity.Person;
+import com.example.user.cioscarr.entity.Supplier;
 
 
 @Database(entities = {Person.class,Supplier.class,Order.class,Car.class,Order_car.class,Payment_for_db.class

@@ -4,10 +4,13 @@ import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 
+import com.example.user.cioscarr.DAO.supplierDAO;
+import com.example.user.cioscarr.entity.Supplier;
+
 import java.util.List;
 
 public class SupplierRepository {
-    private supplierDAO supplierDAO;
+    private com.example.user.cioscarr.DAO.supplierDAO supplierDAO;
     private LiveData<List<Supplier>> allSupplier;
 
     SupplierRepository(Application application) {
