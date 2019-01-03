@@ -40,7 +40,7 @@ public class Login extends AppCompatActivity {
     public static final String Extra_Message1 = "com.example.user.cioscarr.Extra_Message1";
     public static final String Extra_Message = "com.example.user.cioscarr.Extra_Message1";
 
-    private SupplierViewModel personViewModel;
+    private PaymentViewModel personViewModel;
     public void signIn(View view){
         String id = txtId.getText().toString();
         String pass = txtPass.getText().toString();
@@ -53,10 +53,8 @@ public class Login extends AppCompatActivity {
         }else{
 
             Intent intent = new Intent(this,dbArchitecture.class);
-                    personViewModel = ViewModelProviders.of(this).get(SupplierViewModel.class);
-        Supplier person = new Supplier("S0001",
-                "teikChun","01223131313",
-                "213112313","gg");
+                    personViewModel = ViewModelProviders.of(this).get(PaymentViewModel.class);
+        Payment_for_db person = new Payment_for_db("P0001","Credit", "21/12/1111", "4848100049641080", "Paid", "O0001");
         personViewModel.insert(person);
             startActivity(intent);
         }
