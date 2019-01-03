@@ -12,15 +12,20 @@ public class CarViewModel extends AndroidViewModel {
 
     private CarRepository cRepository;
     private LiveData<List<Car>> allCar;
+    private LiveData<List<String>> allCarType;
 
     public CarViewModel (Application application) {
         super(application);
         cRepository = new CarRepository(application);
         allCar = cRepository.getAllCar();
+        allCarType = cRepository.getAllCarType();
     }
 
     LiveData<List<Car>> getAllCar() {
         return allCar;
+    }
+    LiveData<List<String>> getAllCarType() {
+        return allCarType;
     }
 
     public void insert(Car car) {

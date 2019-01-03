@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.user.cioscarr.entity.Payment_for_db;
 import com.example.user.cioscarr.entity.Supplier;
 
 import java.util.List;
@@ -29,9 +30,9 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.WordViewHo
     public void onBindViewHolder(WordViewHolder holder, int position) {
         if (allSuppliers != null) {
             Supplier current = allSuppliers.get(position);
-            holder.wordItemView.setText(current.getCompany_contact());
-            holder.wordItemView2.setText(current. getSupplier_ID());
-            holder.wordItemView3.setText(current.getSupplier_Name());
+            holder.wordItemView.setText(current.getCompany_address());
+            holder.wordItemView2.setText(current. getCompany_contact());
+            holder.wordItemView3.setText(current.getSupplier_contact());
 
         } else {
             // Covers the case of data not being ready yet.

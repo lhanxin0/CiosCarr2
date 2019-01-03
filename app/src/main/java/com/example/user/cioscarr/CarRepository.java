@@ -12,17 +12,22 @@ import java.util.List;
 public class CarRepository {
     private com.example.user.cioscarr.DAO.carDAO carDAO;
     private LiveData<List<Car>> allCar;
+    private LiveData<List<String>> allCarType;
 
     CarRepository(Application application) {
         PersonRoomDatabase db = PersonRoomDatabase.getDatabase(application);
         carDAO = db.carDAO();
         allCar = carDAO.getAllCar();
+        allCarType = carDAO.getAllCarType();
 
 
 
     }
     LiveData<List<Car>> getAllCar() {
         return allCar;
+    }
+    LiveData<List<String>> getAllCarType() {
+        return allCarType;
     }
     public void insert (Car car) {
         new CarRepository.insertAsyncTask(carDAO).execute(car);

@@ -12,15 +12,20 @@ public class SupplierViewModel extends AndroidViewModel {
 
     private SupplierRepository sRepository;
     private LiveData<List<Supplier>> allSupplier;
+    private LiveData<List<String>> allSupplierID;
 
     public SupplierViewModel (Application application) {
         super(application);
         sRepository = new SupplierRepository(application);
         allSupplier = sRepository.getAllSupplier();
+        allSupplierID = sRepository.getAllSupplierID();
     }
 
     LiveData<List<Supplier>> getAllSupplier() {
         return allSupplier;
+    }
+    LiveData<List<String>> getAllSupplierID() {
+        return allSupplierID;
     }
 
     public void insert(Supplier supplier) {

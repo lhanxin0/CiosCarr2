@@ -12,16 +12,21 @@ import java.util.List;
 public class SupplierRepository {
     private com.example.user.cioscarr.DAO.supplierDAO supplierDAO;
     private LiveData<List<Supplier>> allSupplier;
+    private LiveData<List<String>> allSupplierID;
 
     SupplierRepository(Application application) {
         PersonRoomDatabase db = PersonRoomDatabase.getDatabase(application);
         supplierDAO = db.supplierDAO();
         allSupplier = supplierDAO.getAllSupplier();
+        allSupplierID = supplierDAO.getAllSupplierID();
 
 
     }
     LiveData<List<Supplier>> getAllSupplier() {
         return allSupplier;
+    }
+    LiveData<List<String>> getAllSupplierID() {
+        return allSupplierID;
     }
     public void insert (Supplier supplier) {
         new SupplierRepository.insertAsyncTask(supplierDAO).execute(supplier);

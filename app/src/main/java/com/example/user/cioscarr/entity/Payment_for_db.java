@@ -8,7 +8,15 @@ import android.support.annotation.NonNull;
 
 import com.example.user.cioscarr.entity.Order;
 
-@Entity(tableName = "Paymeny_for_db")
+
+
+@Entity(tableName = "Paymeny_for_db",
+        foreignKeys = {
+        @ForeignKey(
+                entity = Order.class,
+                parentColumns = "order_id",
+                childColumns = "order_id"
+        )})
 public class Payment_for_db {
 
     @PrimaryKey
@@ -28,9 +36,6 @@ public class Payment_for_db {
     @ColumnInfo(name="status")
     private String status;
 
-    @ForeignKey(entity = Order.class,
-            parentColumns = "order_id",
-            childColumns = "order_id")
     @ColumnInfo(name="order_id")
     private String order_id;
 
