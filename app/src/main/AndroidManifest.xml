@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".splashScreen"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".splashScreen"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -41,6 +41,9 @@
         <activity
             android:name=".booking_summary"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Login" />
+        <activity android:name=".Car_detail"></activity>
+        <activity android:name=".Choose_car_activity"></activity>
         <activity android:name=".Login" />
         <activity android:name=".dbArchitecture" />
         <activity android:name=".recycleView"></activity>

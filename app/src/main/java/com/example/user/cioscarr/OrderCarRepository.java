@@ -4,10 +4,13 @@ import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 
+import com.example.user.cioscarr.DAO.order_carDAO;
+import com.example.user.cioscarr.entity.Order_car;
+
 import java.util.List;
 
 public class OrderCarRepository {
-    private order_carDAO order_carDAO;
+    private com.example.user.cioscarr.DAO.order_carDAO order_carDAO;
     private LiveData<List<Order_car>> allOrderCar;
 
     OrderCarRepository(Application application) {

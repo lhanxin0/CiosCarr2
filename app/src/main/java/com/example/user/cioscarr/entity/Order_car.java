@@ -1,4 +1,4 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -6,7 +6,6 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-import java.util.Date;
 @Entity(tableName = "Order_car")
 public class Order_car {
     @PrimaryKey

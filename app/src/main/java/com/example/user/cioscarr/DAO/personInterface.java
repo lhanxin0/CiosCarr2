@@ -1,11 +1,11 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.DAO;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
-import com.example.user.cioscarr.Person;
+import com.example.user.cioscarr.entity.Person;
 
 import java.util.List;
 

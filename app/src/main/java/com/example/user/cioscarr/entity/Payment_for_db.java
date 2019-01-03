@@ -1,4 +1,4 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -6,7 +6,8 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-import java.util.Date;
+import com.example.user.cioscarr.entity.Order;
+
 @Entity(tableName = "Paymeny_for_db")
 public class Payment_for_db {
 

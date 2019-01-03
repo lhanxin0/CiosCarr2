@@ -4,6 +4,8 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
+import com.example.user.cioscarr.entity.Supplier;
+
 import java.util.List;
 
 public class SupplierViewModel extends AndroidViewModel {

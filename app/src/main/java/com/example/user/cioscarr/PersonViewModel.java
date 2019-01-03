@@ -4,8 +4,7 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
-import com.example.user.cioscarr.Person;
-import com.example.user.cioscarr.PersonRepository;
+import com.example.user.cioscarr.entity.Person;
 
 import java.util.List;
 

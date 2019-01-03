@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.user.cioscarr.entity.Supplier;
+
 import java.util.List;
 
 public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.WordViewHolder> {
