@@ -13,17 +13,28 @@ public class PersonRepository  {
 
     private personInterface personDao;
     private LiveData<List<Person>> allPerson;
+    private List<Person>  person;
+
+
 
     PersonRepository(Application application) {
         PersonRoomDatabase db = PersonRoomDatabase.getDatabase(application);
         personDao = db.PersonDao();
         allPerson = personDao.getAllPerson();
+        person = personDao.getPerson();
 
 
     }
+
+
     LiveData<List<Person>> getAllPerson() {
         return allPerson;
     }
+   List<Person> getPerson() {
+        return person;
+    }
+
+
     public void insert (Person uid) {
         new insertAsyncTask(personDao).execute(uid);
     }

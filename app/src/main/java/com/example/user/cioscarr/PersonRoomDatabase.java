@@ -45,7 +45,7 @@ public abstract class PersonRoomDatabase extends RoomDatabase {
                             // if no Migration object.
                             // Migration is not part of this practical.
                             .fallbackToDestructiveMigration()
-                            .addCallback(sRoomDatabaseCallback)
+                            .addCallback(sRoomDatabaseCallback).allowMainThreadQueries()
                             .build();
                 }
             }

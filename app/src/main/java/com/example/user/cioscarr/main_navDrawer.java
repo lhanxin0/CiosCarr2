@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class main_navDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -26,8 +27,6 @@ public class main_navDrawer extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
          drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -36,6 +35,8 @@ public class main_navDrawer extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -98,6 +99,10 @@ public class main_navDrawer extends AppCompatActivity
         } else if (id == R.id.nav_privacy) {
             Intent intent = new Intent(this,reservation.class);
            // startActivity(intent);
+        }else if (id == R.id.logoutBtn) {
+            Intent intent = new Intent(this,Login.class);
+             startActivity(intent);
+             finish();
         }
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

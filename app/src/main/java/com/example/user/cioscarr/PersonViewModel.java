@@ -12,15 +12,21 @@ public class PersonViewModel extends AndroidViewModel {
 
     private PersonRepository pRepository;
     private LiveData<List<Person>> allPerson;
+    private List<Person> getPerson;
 
-    public PersonViewModel (Application application) {
+    public PersonViewModel(Application application) {
         super(application);
         pRepository = new PersonRepository(application);
         allPerson = pRepository.getAllPerson();
+        getPerson = pRepository.getPerson();
+
     }
 
     LiveData<List<Person>> getAllPerson() {
         return allPerson;
+    }
+    List<Person> getPerson() {
+        return getPerson;
     }
 
     public void insert(Person uid) {

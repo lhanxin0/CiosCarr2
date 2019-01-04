@@ -150,6 +150,7 @@
         android:layout_marginStart="6dp"
         android:layout_marginEnd="8dp"
         android:background="#5BC236"
+        android:onClick="signUpListener"
         android:text="@string/sign_up"
         android:textColor="@android:color/white"
         android:textSize="20sp"

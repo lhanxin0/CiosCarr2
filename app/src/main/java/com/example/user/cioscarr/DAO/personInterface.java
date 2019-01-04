@@ -19,4 +19,7 @@ public interface personInterface {
 
     @Query("SELECT * from person ")
     LiveData<List<Person>> getAllPerson();
+
+    @Query("SELECT * from person ")
+    List<Person> getPerson();
 }
