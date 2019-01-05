@@ -6,6 +6,7 @@ import android.arch.lifecycle.LiveData;
 
 import com.example.user.cioscarr.Repository.PaymentRepository;
 import com.example.user.cioscarr.entity.Payment_for_db;
+import com.example.user.cioscarr.entity.Person;
 
 import java.util.List;
 
@@ -24,8 +25,13 @@ public class PaymentViewModel extends AndroidViewModel {
         return allPayment;
     }
 
+    public List<Payment_for_db> getPayment() {
+        return getPayment();
+    }
+
     public void insert(Payment_for_db payment_for_db) {
         payRepository.insert(payment_for_db);
     }
+
 
 }
