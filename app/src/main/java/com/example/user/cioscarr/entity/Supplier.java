@@ -28,13 +28,21 @@ public class Supplier {
     @ColumnInfo(name = "company_address")
     private String company_address;
 
-    public Supplier(@NonNull String supplier_ID, String supplier_Name, String supplier_contact, String company_contact, String company_name, String company_address) {
+    @ColumnInfo(name = "area")
+    private String area;
+
+    public Supplier(@NonNull String supplier_ID, String supplier_Name, String supplier_contact, String company_contact, String company_name, String company_address, String area) {
         this.supplier_ID = supplier_ID;
         this.supplier_Name = supplier_Name;
         this.supplier_contact = supplier_contact;
         this.company_contact = company_contact;
         this.company_name = company_name;
         this.company_address = company_address;
+        this.area = area;
+    }
+
+    public String getArea() {
+        return area;
     }
 
     public String getCompany_address() {

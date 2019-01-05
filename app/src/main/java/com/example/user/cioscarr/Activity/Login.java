@@ -10,7 +10,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.user.cioscarr.R;
+import com.example.user.cioscarr.ViewModel.CarViewModel;
 import com.example.user.cioscarr.ViewModel.PersonViewModel;
+import com.example.user.cioscarr.ViewModel.SupplierViewModel;
 import com.example.user.cioscarr.entity.Person;
 
 import java.util.List;
@@ -26,6 +28,9 @@ public class Login extends AppCompatActivity {
             "com.example.android.twoactivities.extra.MESSAGE";
 
     private PersonViewModel pvm;
+    private SupplierViewModel svm;
+    private CarViewModel cvm;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,8 @@ public class Login extends AppCompatActivity {
         txtPass = findViewById(R.id.txtPass);
 
         pvm = ViewModelProviders.of(this).get(PersonViewModel.class);
+        svm = ViewModelProviders.of(this).get(SupplierViewModel.class);
+        cvm = ViewModelProviders.of(this).get(CarViewModel.class);
 
 
         //   personViewModel = ViewModelProviders.of(this).get(PersonViewModel.class);
