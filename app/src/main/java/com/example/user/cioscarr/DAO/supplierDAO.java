@@ -27,4 +27,6 @@ public interface supplierDAO {
     @Query("SELECT * from Supplier")
     List<Supplier> getSupplier();
 
+
+
 }
