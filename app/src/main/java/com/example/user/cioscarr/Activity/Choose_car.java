@@ -18,15 +18,13 @@ import com.example.user.cioscarr.entity.Car;
 
 import java.util.List;
 
-public class Choose_car_activity extends main_navDrawer{
+public class Choose_car extends main_navDrawer {
     private CarViewModel cvm;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Car Details");
-//        setContentView(R.layout.activity_choose_car);
+        setTitle("Choose Car");
         LayoutInflater inflater = (LayoutInflater) this
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View contentView = inflater.inflate(R.layout.activity_choose_car, null, false);

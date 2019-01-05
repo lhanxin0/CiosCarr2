@@ -201,7 +201,7 @@ public class reservation extends main_navDrawer {
     public void searchListener(View view) {
         String cartype = stype.getSelectedItem().toString();
         String cararea = s.getSelectedItem().toString();
-        Intent intent = new Intent(this, Choose_car_activity.class);
+        Intent intent = new Intent(this, Choose_car.class);
         intent.putExtra("carType", cartype);
         intent.putExtra("carArea", cararea);
         startActivity(intent);
