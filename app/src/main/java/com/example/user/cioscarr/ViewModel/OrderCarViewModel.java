@@ -1,9 +1,10 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.ViewModel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
+import com.example.user.cioscarr.Repository.OrderCarRepository;
 import com.example.user.cioscarr.entity.Order_car;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class OrderCarViewModel extends AndroidViewModel {
         allOrderCar = ocRepository.getAllOrder_car();
     }
 
-    LiveData<List<Order_car>> getAllOrder_car() {
+    public LiveData<List<Order_car>> getAllOrder_car() {
         return allOrderCar;
     }
 

@@ -1,9 +1,10 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.ViewModel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
+import com.example.user.cioscarr.Repository.PaymentRepository;
 import com.example.user.cioscarr.entity.Payment_for_db;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class PaymentViewModel extends AndroidViewModel {
         allPayment = payRepository.getAllPayment();
     }
 
-    LiveData<List<Payment_for_db>> getAllPayment() {
+    public LiveData<List<Payment_for_db>> getAllPayment() {
         return allPayment;
     }
 

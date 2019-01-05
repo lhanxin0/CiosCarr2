@@ -1,29 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android=
     "http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content">
 
-    <TextView
-    android:id="@+id/textView"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    style="@style/text_view_style"
-    tools:text="placeholder text" />
-
-    <TextView
-        android:id="@+id/textVie"
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/text_view_style"
-        tools:text="placeholdert" />
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/textVie1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/text_view_style"
-        tools:text="placeholert" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:padding="5dp">
 
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/imgCar"
+                android:layout_width="425dp"
+                android:layout_height="wrap_content"
+                android:maxHeight="200px"
+                android:minHeight="120px"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txtview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Name" />
+
+            <TextView
+                android:id="@+id/txtUser_name"
+                android:layout_width="314dp"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txtview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Ic Number" />
+
+            <TextView
+                android:id="@+id/txtUser_ic"
+                android:layout_width="314dp"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txtview3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Contact" />
+
+            <TextView
+                android:id="@+id/txtUser_contact"
+                android:layout_width="314dp"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txtview4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Email " />
+
+            <TextView
+                android:id="@+id/txtUser_email"
+                android:layout_width="314dp"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </TableRow>
+
+    </TableLayout>
 </LinearLayout>

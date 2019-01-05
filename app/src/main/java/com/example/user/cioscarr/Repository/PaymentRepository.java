@@ -1,10 +1,11 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.Repository;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 
 import com.example.user.cioscarr.DAO.PaymentDAO;
+import com.example.user.cioscarr.PersonRoomDatabase;
 import com.example.user.cioscarr.entity.Payment_for_db;
 
 import java.util.List;
@@ -13,14 +14,14 @@ public class PaymentRepository {
     private PaymentDAO paymentDAO;
     private LiveData<List<Payment_for_db>> allPayment;
 
-    PaymentRepository(Application application) {
+    public PaymentRepository(Application application) {
         PersonRoomDatabase db = PersonRoomDatabase.getDatabase(application);
         paymentDAO = db.paymentDAO();
         allPayment = paymentDAO.getAllPayment();
 
 
     }
-    LiveData<List<Payment_for_db>> getAllPayment() {
+    public LiveData<List<Payment_for_db>> getAllPayment() {
         return allPayment;
     }
     public void insert (Payment_for_db payment) {

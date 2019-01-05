@@ -1,11 +1,11 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.Activity;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.example.user.cioscarr.main_navDrawer;
+import com.example.user.cioscarr.R;
 
 public class Choose_car_activity extends main_navDrawer {
     @Override

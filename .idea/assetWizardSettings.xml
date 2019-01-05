@@ -28,8 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_add_black_24dp" />
-                            <entry key="sourceFile" value="C:\Users\User" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_logout" />
+                            <entry key="sourceFile" value="C:\Users\User\Downloads\icons8-exit-filled-500.svg" />
                           </map>
                         </option>
                       </PersistentState>

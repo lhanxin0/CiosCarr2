@@ -6,7 +6,16 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-@Entity(tableName = "Order_car")
+@Entity(tableName = "Order_car",
+        foreignKeys = {
+                @ForeignKey(
+                        entity = Car.class,
+                        parentColumns = "car_id",
+                        childColumns = "car_id"
+                ),  @ForeignKey(entity = Order.class,
+                parentColumns = "order_id",
+                childColumns = "order_id")})
+
 public class Order_car {
     @PrimaryKey
     @NonNull
@@ -25,9 +34,7 @@ public class Order_car {
     @ColumnInfo(name="order_car_rTime")
     private String return_time;
 
-    @ForeignKey(entity = Order.class,
-            parentColumns = "order_id",
-            childColumns = "order_id")
+
     @NonNull
     @ColumnInfo(name = "order_id")
     private String  order_id;

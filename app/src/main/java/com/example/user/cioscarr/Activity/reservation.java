@@ -1,4 +1,4 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.Activity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -8,12 +8,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.example.user.cioscarr.R;
+import com.example.user.cioscarr.ViewModel.SupplierViewModel;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Locale;
 
 public class reservation extends main_navDrawer {
 
@@ -21,12 +23,12 @@ public class reservation extends main_navDrawer {
     public static final String Extra_Message1 = "com.example.user.cioscarr.Extra_Message1";
 
     final Calendar myCalendar = Calendar.getInstance();
-    EditText txtTake_Date;
-    EditText txtReturn_Date;
-    EditText txtTake_time;
-    EditText txtReturn_time;
+    TextView txtTake_Date;
+    TextView txtReturn_Date;
+    TextView txtTake_time;
+    TextView txtReturn_time;
 
-
+    private SupplierViewModel svm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,51 @@ public class reservation extends main_navDrawer {
         txtReturn_Date = findViewById(R.id.editText2);
         txtTake_time = findViewById(R.id.txtTime);
         txtReturn_time = findViewById(R.id.txtReturn_time);
+
+        //Spinner
+//        String[] arraySpinner = new String[] {
+//
+//        };
+//
+//
+//         final List<Supplier>  a = new ArrayList<>();
+//        svm = ViewModelProviders.of(this).get(SupplierViewModel.class);
+//        svm.getAllSupplier().observe(this, new Observer<List<Supplier>>() {
+//
+//            @Override
+//            public void onChanged(@Nullable final List<Supplier> suppliers) {
+//                // Update the cached copy of the words in the adapter.
+////                Supplier ss = suppliers.get(0);
+////                a.addAll(suppliers);
+////                txtTake_time.setText(a.toString());
+//
+//
+//
+//            }
+//        });
+//
+//        List<String> b = new ArrayList<>();
+//
+//
+//            // txtTake_time.setText(a.get(0).toString());
+//            for(Supplier c : a){
+//                b.add(c.getSupplier_ID());
+//
+//
+//            }
+//            if(b==null){
+//                txtTake_time.setText("je");
+//        }else{
+//            txtTake_time.setText(b.get(0));
+//        }
+//
+//
+//        Spinner s = (Spinner) findViewById(R.id.spinnerArea);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+//                android.R.layout.simple_spinner_item, b);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        s.setAdapter(adapter);
+
 
 
         // Date picker
@@ -156,11 +203,13 @@ public class reservation extends main_navDrawer {
 
         String take_car_date = txtTake_Date.getText().toString();
         String return_car_date = txtReturn_Date.getText().toString();
+        String take_time = txtTake_time.getText().toString();
+        String return_time = txtReturn_time.getText().toString();
 
-        Intent intent = new Intent(this, driver_detail.class);
+        Intent intent = new Intent(this, Choose_car_activity.class);
         intent.putExtra(Extra_Message, take_car_date);
         intent.putExtra(Extra_Message1, return_car_date);
-
+        Intent intent1 = new Intent(this, Register.class);
 
 
         startActivity(intent);

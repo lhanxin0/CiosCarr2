@@ -29,15 +29,20 @@ public class Person {
     @ColumnInfo(name="email")
     private String email;
 
-    public Person(String name, String uid, String password, String ic_num, String contact, String email) {
-        this.name = name;
+    @ColumnInfo(typeAffinity = ColumnInfo.BLOB,name = "profile_pic")
+    private byte[] pro_pic;
+
+    public Person(@NonNull String uid, String name, String ic_num, String password, String contact, String email, byte[] pro_pic) {
         this.uid = uid;
-        this.password = password;
+        this.name = name;
         this.ic_num = ic_num;
+        this.password = password;
         this.contact = contact;
         this.email = email;
+        this.pro_pic = pro_pic;
     }
-/*
+
+   /*
     public Person(@NonNull String uid,@Nullable String name ,String ic_num) {
         this.uid = uid;
         this.name = name;
@@ -66,5 +71,9 @@ public class Person {
 
     public String getEmail() {
         return email;
+    }
+
+    public byte[] getPro_pic() {
+        return pro_pic;
     }
 }

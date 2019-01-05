@@ -5,7 +5,13 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
-@Entity(tableName = "Car")
+@Entity(tableName = "Car",
+        foreignKeys = {
+                @ForeignKey(
+                        entity = Supplier.class,
+                        parentColumns = "supplier_id",
+                        childColumns = "supplier_id"
+                )})
 public class Car {
     @PrimaryKey
     @NonNull
@@ -27,13 +33,13 @@ public class Car {
     @ColumnInfo(name = "status")
     private String status;
 
-    @ForeignKey(entity = Supplier.class,
-            parentColumns = "supplier_id",
-            childColumns = "supplier_id")
     @ColumnInfo(name = "supplier_id")
     private String supplier_id;
 
-    public Car(@NonNull String car_id, String car_type, String car_color, String car_desc, double car_price, String status, String supplier_id) {
+    @ColumnInfo(typeAffinity = ColumnInfo.BLOB,name = "carImg")
+    private byte[] carImg;
+
+    public Car(@NonNull String car_id, String car_type, String car_color, String car_desc, double car_price, String status, String supplier_id, byte[] carImg) {
         this.car_id = car_id;
         this.car_type = car_type;
         this.car_color = car_color;
@@ -41,6 +47,7 @@ public class Car {
         this.car_price = car_price;
         this.status = status;
         this.supplier_id = supplier_id;
+        this.carImg = carImg;
     }
 
     @NonNull
@@ -70,5 +77,9 @@ public class Car {
 
     public String getSupplier_id() {
         return supplier_id;
+    }
+
+    public byte[] getCarImg() {
+        return carImg;
     }
 }

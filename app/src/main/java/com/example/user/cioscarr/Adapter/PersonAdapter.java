@@ -1,4 +1,4 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,15 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.user.cioscarr.entity.Supplier;
+import com.example.user.cioscarr.R;
+import com.example.user.cioscarr.entity.Person;
 
 import java.util.List;
 
 public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.WordViewHolder> {
 
     private final LayoutInflater pInflater;
-    private List<Supplier> allSuppliers;
-    PersonAdapter(Context context)
+    private List<Person> allPerson;
+   public PersonAdapter(Context context)
     {
         pInflater = LayoutInflater.from(context);
     }
@@ -27,20 +28,20 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.WordViewHo
 
     @Override
     public void onBindViewHolder(WordViewHolder holder, int position) {
-        if (allSuppliers != null) {
-            Supplier current = allSuppliers.get(position);
-            holder.wordItemView.setText(current.getCompany_contact());
-            holder.wordItemView2.setText(current. getSupplier_ID());
-            holder.wordItemView3.setText(current.getSupplier_Name());
-
+        if (allPerson != null) {
+            Person current = allPerson.get(position);
+            holder.wordItemView.setText(current.getName());
+            holder.wordItemView2.setText(current. getIc_num());
+            holder.wordItemView3.setText(current.getContact());
+            holder.wordItemView4.setText(current.getEmail());
         } else {
             // Covers the case of data not being ready yet.
             holder.wordItemView.setText("No Word");
             holder.wordItemView2.setText("No Word");
         }
     }
-    void setWords(List<Supplier> suppliers){
-        allSuppliers = suppliers;
+    public void setWords(List<Person> persons){
+        allPerson = persons;
         notifyDataSetChanged();
     }
 
@@ -48,21 +49,26 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.WordViewHo
     // mWords has not been updated (means initially, it's null, and we can't return null).
     @Override
     public int getItemCount() {
-        if (allSuppliers != null)
-            return allSuppliers.size();
+        if (allPerson != null)
+            return allPerson.size();
         else return 0;
     }
 
-    class WordViewHolder extends RecyclerView.ViewHolder {
+    public class WordViewHolder extends RecyclerView.ViewHolder {
         private final TextView wordItemView;
         private final TextView wordItemView2;
         private final TextView wordItemView3;
+        private final TextView wordItemView4;
+
 
         private WordViewHolder(View itemView) {
             super(itemView);
-            wordItemView = itemView.findViewById(R.id.textView);
-            wordItemView2 = itemView.findViewById(R.id.textVie);
-            wordItemView3 = itemView.findViewById(R.id.textVie1);
+            wordItemView = itemView.findViewById(R.id.txtUser_name);
+            wordItemView2 = itemView.findViewById(R.id.txtUser_ic);
+            wordItemView3 = itemView.findViewById(R.id.txtUser_contact);
+            wordItemView4 = itemView.findViewById(R.id.txtUser_email);
+
+
         }
     }
 
