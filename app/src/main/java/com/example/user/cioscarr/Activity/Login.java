@@ -7,6 +7,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.user.cioscarr.R;
 import com.example.user.cioscarr.ViewModel.CarViewModel;
@@ -58,7 +59,7 @@ public class Login extends AppCompatActivity {
     public void signIn(View view) {
         String id = txtId.getText().toString();
         String pass = txtPass.getText().toString();
-
+        int count=0;
         //Sign in ( need link with db)
 
         person = pvm.getPerson();
@@ -71,13 +72,13 @@ public class Login extends AppCompatActivity {
                     Intent intent = new Intent(this, reservation.class);
                     intent.putExtra(Extra_Message, id);
                     startActivity(intent);
-                }else{
-//                    Toast.makeText(this, "Invalid Username or password! ",
-//                            Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(this, Choose_car_activity.class);
-                    startActivity(intent);
+                    count=1;
                 }
-
+            }
+            if(count==0)
+            {
+                Toast.makeText(this, "Invalid Username or password! ",
+                        Toast.LENGTH_LONG).show();
             }
 
         }

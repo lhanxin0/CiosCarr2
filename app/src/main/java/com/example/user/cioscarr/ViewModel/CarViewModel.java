@@ -14,6 +14,7 @@ public class CarViewModel extends AndroidViewModel {
     private CarRepository cRepository;
     private LiveData<List<Car>> allCar;
     private List<String> allCarType;
+    private LiveData<List<Car>> allCarTypeArea;
 
     public CarViewModel (Application application) {
         super(application);
@@ -25,6 +26,12 @@ public class CarViewModel extends AndroidViewModel {
     public LiveData<List<Car>> getAllCar() {
         return allCar;
     }
+
+    public LiveData<List<Car>> getAllCarTypeArea(String ctype, String carea)
+    {
+        return cRepository.getAllCarTypeArea(ctype,carea);
+    }
+
     public List<String> getAllCarType() {
         return allCarType;
     }

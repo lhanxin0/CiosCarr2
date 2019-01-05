@@ -1,6 +1,7 @@
 package com.example.user.cioscarr.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,9 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
 
     private final LayoutInflater pInflater;
     private List<Car> allcars;
+    private String type;
+    private String area;
+    private int selectedPos = RecyclerView.NO_POSITION;
 
 
     public carAdapter(Context context)
@@ -23,19 +27,23 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
         pInflater = LayoutInflater.from(context);
     }
     @Override
-    public carAdapter.WordViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public WordViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
         View itemView = pInflater.inflate(R.layout.recycler_view_car, parent, false);
-        return new carAdapter.WordViewHolder(itemView);
+
+        return new WordViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(carAdapter.WordViewHolder holder, int position) {
+    public void onBindViewHolder(WordViewHolder holder, int position) {
+
         if (allcars != null) {
+
             Car current = allcars.get(position);
             holder.wordItemView.setText(current.getCar_name());
             holder.wordItemView2.setText(current. getCar_desc());
             holder.wordItemView3.setText(String.format("RM %.2f",current.getCar_price()));
-
+            holder.itemView.setSelected(selectedPos == position);
         } else {
             // Covers the case of data not being ready yet.
             holder.wordItemView.setText("No Word");
@@ -43,7 +51,9 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
         }
     }
     public void setWords(List<Car> cars){
+
         allcars = cars;
+//        cars = allcars;
         notifyDataSetChanged();
     }
 
@@ -52,11 +62,16 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
     @Override
     public int getItemCount() {
         if (allcars != null)
+        {
             return allcars.size();
-        else return 0;
+        }
+        else
+            return 0;
     }
 
-    public class WordViewHolder extends RecyclerView.ViewHolder {
+
+
+    public class WordViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private final TextView wordItemView;
         private final TextView wordItemView2;
         private final TextView wordItemView3;
@@ -65,10 +80,28 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
 
         private WordViewHolder(View itemView) {
             super(itemView);
-            wordItemView = itemView.findViewById(R.id.txtCar_name);
+            wordItemView = itemView.findViewById(R.id.txtCarName);
             wordItemView2 = itemView.findViewById(R.id.txtCarDetail);
             wordItemView3 = itemView.findViewById(R.id.txtPrice);
+            itemView.setOnClickListener(this);
 
+        }
+
+        @Override
+        public void onClick(View v) {
+            // Below line is just like a safety check, because sometimes holder could be null,
+            // in that case, getAdapterPosition() will return RecyclerView.NO_POSITION
+            if (getAdapterPosition() == RecyclerView.NO_POSITION) return;
+
+            // Updating old as well as new positions
+            notifyItemChanged(selectedPos);
+            selectedPos = getAdapterPosition();
+            notifyItemChanged(selectedPos);
+
+            // Do your another stuff for your onClick
+            Car current = allcars.get(selectedPos);
+            Intent intent=new Intent(this, );
+            intent.putExtra("selectedID", current.getCar_id());
 
         }
     }

@@ -22,4 +22,7 @@ public interface carDAO {
 
     @Query("SELECT car_type from Car ")
     List<String> getAllCarType();
+
+    @Query("SELECT c.* from Car c , Supplier s WHERE car_type=:ctype AND c.supplier_id=s.supplier_ID AND s.area =:carea")
+    LiveData<List<Car>> getAllCarByTypeArea(String ctype, String carea);
 }
