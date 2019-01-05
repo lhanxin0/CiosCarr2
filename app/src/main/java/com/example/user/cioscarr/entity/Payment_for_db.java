@@ -6,8 +6,6 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-import com.example.user.cioscarr.entity.Order;
-
 
 
 @Entity(tableName = "Paymeny_for_db",

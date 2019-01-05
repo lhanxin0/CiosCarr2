@@ -42,8 +42,10 @@
             android:name=".Activity.booking_summary"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activity.Login" />
-        <activity android:name=".Activity.Car_detail"></activity>
-        <activity android:name=".Activity.Choose_car_activity"></activity>
+        <activity android:name=".Activity.Booking_detail"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Activity.Choose_car"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Activity.dbArchitecture" />
         <activity android:name=".Activity.recycleView"></activity>
 

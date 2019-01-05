@@ -13,7 +13,7 @@ import java.util.List;
 public class CarRepository {
     private com.example.user.cioscarr.DAO.carDAO carDAO;
     private LiveData<List<Car>> allCar;
-    private LiveData<List<String>> allCarType;
+    private List<String> allCarType;
 
    public CarRepository(Application application) {
         PersonRoomDatabase db = PersonRoomDatabase.getDatabase(application);
@@ -27,7 +27,7 @@ public class CarRepository {
     public LiveData<List<Car>> getAllCar() {
         return allCar;
     }
-    public LiveData<List<String>> getAllCarType() {
+    public List<String> getAllCarType() {
         return allCarType;
     }
     public void insert (Car car) {

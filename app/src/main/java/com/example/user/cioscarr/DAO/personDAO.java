@@ -10,7 +10,7 @@ import com.example.user.cioscarr.entity.Person;
 import java.util.List;
 
 @Dao
-public interface personInterface {
+public interface personDAO {
     @Insert
     void insert(Person person);
 

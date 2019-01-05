@@ -9,7 +9,7 @@ import android.support.annotation.NonNull;
         foreignKeys = {
                 @ForeignKey(
                         entity = Supplier.class,
-                        parentColumns = "supplier_id",
+                        parentColumns = "supplier_ID",
                         childColumns = "supplier_id"
                 )})
 public class Car {
@@ -20,6 +20,9 @@ public class Car {
 
     @ColumnInfo(name = "car_type")
     private String car_type;
+
+    @ColumnInfo(name = "car_name")
+    private String car_name;
 
     @ColumnInfo(name = "car_color")
     private String car_color;
@@ -39,9 +42,10 @@ public class Car {
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB,name = "carImg")
     private byte[] carImg;
 
-    public Car(@NonNull String car_id, String car_type, String car_color, String car_desc, double car_price, String status, String supplier_id, byte[] carImg) {
+    public Car(@NonNull String car_id, String car_type, String car_name, String car_color, String car_desc, double car_price, String status, String supplier_id, byte[] carImg) {
         this.car_id = car_id;
         this.car_type = car_type;
+        this.car_name = car_name;
         this.car_color = car_color;
         this.car_desc = car_desc;
         this.car_price = car_price;
@@ -81,5 +85,9 @@ public class Car {
 
     public byte[] getCarImg() {
         return carImg;
+    }
+
+    public String getCar_name() {
+        return car_name;
     }
 }

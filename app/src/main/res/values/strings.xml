@@ -37,4 +37,8 @@
     <string name="date_time_location">Date time location</string>
     <string name="drop_off">Drop-Off :</string>
     <string name="car_name">Car Name</string>
+    <string name="car_specification">Car Specification</string>
+    <string name="supplier_location">Supplier Location</string>
+    <string name="your_supplier_details">Your Supplier Details</string>
+    <string name="book_this_car">Book this car</string>
 </resources>
