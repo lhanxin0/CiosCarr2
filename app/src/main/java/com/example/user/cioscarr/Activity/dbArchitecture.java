@@ -1,4 +1,4 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.Activity;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.user.cioscarr.entity.Payment_for_db;
+import com.example.user.cioscarr.Adapter.PersonAdapter;
+import com.example.user.cioscarr.R;
+import com.example.user.cioscarr.Repository.PersonRepository;
+import com.example.user.cioscarr.ViewModel.PersonViewModel;
 import com.example.user.cioscarr.entity.Person;
-import com.example.user.cioscarr.entity.Supplier;
 
 import java.util.List;
 
@@ -30,12 +32,12 @@ public class dbArchitecture extends AppCompatActivity {
 
         pvm = ViewModelProviders.of(this).get(PersonViewModel.class);
 
-        pvm.getAllPerson().observe(this, new Observer<List<Person>>() {
-            @Override
-            public void onChanged(@Nullable final List<Person> person) {
-                // Update the cached copy of the words in the adapter.
-                //adapter.setID("P0002");
-                adapter.setWords(person);
+                pvm.getAllPerson().observe(this, new Observer<List<Person>>() {
+                    @Override
+                    public void onChanged(@Nullable final List<Person> person) {
+                        // Update the cached copy of the words in the adapter.
+                        //adapter.setID("P0002");
+                        adapter.setWords(person);
             }
         });
 

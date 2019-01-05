@@ -1,10 +1,11 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.Repository;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 
 import com.example.user.cioscarr.DAO.carDAO;
+import com.example.user.cioscarr.PersonRoomDatabase;
 import com.example.user.cioscarr.entity.Car;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class CarRepository {
     private LiveData<List<Car>> allCar;
     private LiveData<List<String>> allCarType;
 
-    CarRepository(Application application) {
+   public CarRepository(Application application) {
         PersonRoomDatabase db = PersonRoomDatabase.getDatabase(application);
         carDAO = db.carDAO();
         allCar = carDAO.getAllCar();
@@ -23,10 +24,10 @@ public class CarRepository {
 
 
     }
-    LiveData<List<Car>> getAllCar() {
+    public LiveData<List<Car>> getAllCar() {
         return allCar;
     }
-    LiveData<List<String>> getAllCarType() {
+    public LiveData<List<String>> getAllCarType() {
         return allCarType;
     }
     public void insert (Car car) {

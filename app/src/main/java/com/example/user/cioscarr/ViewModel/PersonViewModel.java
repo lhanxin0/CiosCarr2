@@ -1,9 +1,10 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.ViewModel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
+import com.example.user.cioscarr.Repository.PersonRepository;
 import com.example.user.cioscarr.entity.Person;
 
 import java.util.List;
@@ -22,10 +23,10 @@ public class PersonViewModel extends AndroidViewModel {
 
     }
 
-    LiveData<List<Person>> getAllPerson() {
+    public LiveData<List<Person>> getAllPerson() {
         return allPerson;
     }
-    List<Person> getPerson() {
+    public List<Person> getPerson() {
         return getPerson;
     }
 

@@ -1,10 +1,11 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.Repository;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 
 import com.example.user.cioscarr.DAO.personInterface;
+import com.example.user.cioscarr.PersonRoomDatabase;
 import com.example.user.cioscarr.entity.Person;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class PersonRepository  {
 
 
 
-    PersonRepository(Application application) {
+    public PersonRepository(Application application) {
         PersonRoomDatabase db = PersonRoomDatabase.getDatabase(application);
         personDao = db.PersonDao();
         allPerson = personDao.getAllPerson();
@@ -27,10 +28,10 @@ public class PersonRepository  {
     }
 
 
-    LiveData<List<Person>> getAllPerson() {
+    public LiveData<List<Person>> getAllPerson() {
         return allPerson;
     }
-   List<Person> getPerson() {
+    public List<Person> getPerson() {
         return person;
     }
 

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".splashScreen"
+        <activity android:name=".Activity.splashScreen"
             android:theme="@style/AppTheme.NoActionBar"
             >
             <intent-filter>
@@ -18,35 +18,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Register">
+        <activity android:name=".Activity.Register">
             android:label = "Second Activity"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.user.cioscarr.Login" />
+                android:value="com.example.user.cioscarr.Activity.Login" />
         </activity>
         <activity
-            android:name=".main_navDrawer"
+            android:name=".Activity.main_navDrawer"
             android:label="@string/title_activity_booking"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".driver_detail"
+            android:name=".Activity.driver_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".reservation"
+            android:name=".Activity.reservation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".payment"
+            android:name=".Activity.payment"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".booking_summary"
+            android:name=".Activity.booking_summary"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Login" />
-        <activity android:name=".Car_detail"></activity>
-        <activity android:name=".Choose_car_activity"></activity>
-        <activity android:name=".Login" />
-        <activity android:name=".dbArchitecture" />
-        <activity android:name=".recycleView"></activity>
-    </application>
+        <activity android:name=".Activity.Login" />
+        <activity android:name=".Activity.Car_detail"></activity>
+        <activity android:name=".Activity.Choose_car_activity"></activity>
+        <activity android:name=".Activity.dbArchitecture" />
+        <activity android:name=".Activity.recycleView"></activity>
 
+    </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>

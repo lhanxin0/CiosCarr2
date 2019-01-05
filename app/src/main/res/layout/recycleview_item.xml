@@ -28,8 +28,10 @@
 
             <ImageView
                 android:id="@+id/imgCar"
-                android:layout_width="360dp"
+                android:layout_width="425dp"
                 android:layout_height="wrap_content"
+                android:maxHeight="200px"
+                android:minHeight="120px"
                 tools:srcCompat="@tools:sample/avatars" />
 
         </TableRow>

@@ -1,4 +1,4 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.Adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,9 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.user.cioscarr.entity.Payment_for_db;
+import com.example.user.cioscarr.R;
 import com.example.user.cioscarr.entity.Person;
-import com.example.user.cioscarr.entity.Supplier;
 
 import java.util.List;
 
@@ -17,7 +16,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.WordViewHo
 
     private final LayoutInflater pInflater;
     private List<Person> allPerson;
-    PersonAdapter(Context context)
+   public PersonAdapter(Context context)
     {
         pInflater = LayoutInflater.from(context);
     }
@@ -30,21 +29,18 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.WordViewHo
     @Override
     public void onBindViewHolder(WordViewHolder holder, int position) {
         if (allPerson != null) {
-
             Person current = allPerson.get(position);
             holder.wordItemView.setText(current.getName());
             holder.wordItemView2.setText(current. getIc_num());
             holder.wordItemView3.setText(current.getContact());
             holder.wordItemView4.setText(current.getEmail());
-
-
         } else {
             // Covers the case of data not being ready yet.
             holder.wordItemView.setText("No Word");
             holder.wordItemView2.setText("No Word");
         }
     }
-    void setWords(List<Person> persons){
+    public void setWords(List<Person> persons){
         allPerson = persons;
         notifyDataSetChanged();
     }
@@ -58,7 +54,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.WordViewHo
         else return 0;
     }
 
-    class WordViewHolder extends RecyclerView.ViewHolder {
+    public class WordViewHolder extends RecyclerView.ViewHolder {
         private final TextView wordItemView;
         private final TextView wordItemView2;
         private final TextView wordItemView3;

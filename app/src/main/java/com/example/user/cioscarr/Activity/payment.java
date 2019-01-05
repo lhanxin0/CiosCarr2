@@ -1,4 +1,4 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.Activity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+
+import com.example.user.cioscarr.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

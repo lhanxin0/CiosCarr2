@@ -23,7 +23,7 @@ import com.example.user.cioscarr.entity.Supplier;
 
 
 @Database(entities = {Person.class,Supplier.class,Order.class,Car.class,Order_car.class,Payment_for_db.class
-}, version = 3, exportSchema = false)
+}, version = 5, exportSchema = false)
 public abstract class PersonRoomDatabase extends RoomDatabase {
 
     public abstract personInterface PersonDao();
@@ -59,7 +59,7 @@ public abstract class PersonRoomDatabase extends RoomDatabase {
             new RoomDatabase.Callback(){
 
                 @Override
-                public void onCreate (@NonNull SupportSQLiteDatabase db){
+                public void onCreate(@NonNull SupportSQLiteDatabase db){
                     super.onCreate(db);
                     new PopulateDbAsync(INSTANCE).execute();
                 }
@@ -95,7 +95,7 @@ public abstract class PersonRoomDatabase extends RoomDatabase {
                     ,"langkawi",
                     "981208027685",
                     "0124981425",
-                    "lhanxin0@gmail.com"));
+                    "lhanxin0@gmail.com",null));
 
             sDao.insert(new Supplier("S0001",
                     "teikChun","01223131313",
@@ -105,7 +105,7 @@ public abstract class PersonRoomDatabase extends RoomDatabase {
 
             cDao.insert(new Car("C0001",
                     "Nissan","grey","bestCar",
-                    2.0,"Available","S0001"));
+                    2.0,"Available","S0001",null));
 
             ocDao.insert(new Order_car("OC0001","21/12/1111","21/12/1111", "11:11", "12:12","O0001", "C0001"));
             pDao.insert(new Payment_for_db("P0001","Credit", "21/12/1111", "4848100049641080", "Paid", "O0001"));

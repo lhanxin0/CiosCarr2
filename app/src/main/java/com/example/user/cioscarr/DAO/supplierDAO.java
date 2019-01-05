@@ -24,7 +24,7 @@ public interface supplierDAO {
     @Query("SELECT * from Supplier ")
     LiveData<List<Supplier>> getAllSupplier();
 
-    @Query("SELECT supplier_id from Supplier")
-    LiveData<List<String>> getAllSupplierID();
+    @Query("SELECT * from Supplier")
+    List<Supplier> getSupplier();
 
 }
