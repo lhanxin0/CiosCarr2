@@ -1,18 +1,29 @@
-package com.example.user.cioscarr;
+package com.example.user.cioscarr.Activity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
-import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.example.user.cioscarr.R;
+import com.example.user.cioscarr.ViewModel.CarViewModel;
+import com.example.user.cioscarr.ViewModel.SupplierViewModel;
+import com.example.user.cioscarr.entity.Car;
+import com.example.user.cioscarr.entity.Supplier;
+
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 public class reservation extends main_navDrawer {
@@ -21,11 +32,13 @@ public class reservation extends main_navDrawer {
     public static final String Extra_Message1 = "com.example.user.cioscarr.Extra_Message1";
 
     final Calendar myCalendar = Calendar.getInstance();
-    EditText txtTake_Date;
-    EditText txtReturn_Date;
-    EditText txtTake_time;
-    EditText txtReturn_time;
+    TextView txtTake_Date;
+    TextView txtReturn_Date;
+    TextView txtTake_time;
+    TextView txtReturn_time;
 
+    private SupplierViewModel svm;
+    private CarViewModel cvm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +55,35 @@ public class reservation extends main_navDrawer {
         txtTake_time = findViewById(R.id.txtTime);
         txtReturn_time = findViewById(R.id.txtReturn_time);
 
+        svm = ViewModelProviders.of(this).get(SupplierViewModel.class);
+        cvm = ViewModelProviders.of(this).get(CarViewModel.class);
+
+
+
+       // txtReturn_Date.setText(cvm.getAllCarType().get(0));
+       List<Supplier> SupplierArea = svm.getSupplier();
+       List<Car> CarType = cvm.getAllCarType();
+
+       List<String> area = new ArrayList<>();
+       List<String> car_type = new ArrayList<>();
+       for(Supplier s : SupplierArea){
+           area.add(s.getArea());
+       }
+       for(Car c : CarType){
+           car_type.add(c.getCar_type());
+       }
+
+        Spinner s = (Spinner) findViewById(R.id.spinnerArea);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, area);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s.setAdapter(adapter);
+
+        Spinner stype = (Spinner) findViewById(R.id.spinnerCarType);
+        ArrayAdapter<String> adapterCType = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, car_type);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        stype.setAdapter(adapterCType);
 
         // Date picker
         final DatePickerDialog.OnDateSetListener take_date = new DatePickerDialog.OnDateSetListener() {
@@ -156,11 +198,13 @@ public class reservation extends main_navDrawer {
 
         String take_car_date = txtTake_Date.getText().toString();
         String return_car_date = txtReturn_Date.getText().toString();
+        String take_time = txtTake_time.getText().toString();
+        String return_time = txtReturn_time.getText().toString();
 
-        Intent intent = new Intent(this, driver_detail.class);
+        Intent intent = new Intent(this, Choose_car_activity.class);
         intent.putExtra(Extra_Message, take_car_date);
         intent.putExtra(Extra_Message1, return_car_date);
-
+        Intent intent1 = new Intent(this, Register.class);
 
 
         startActivity(intent);

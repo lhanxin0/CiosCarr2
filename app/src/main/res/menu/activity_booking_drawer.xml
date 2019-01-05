@@ -35,4 +35,17 @@
         </menu>
     </item>
 
+    <group android:checkableBehavior="single">
+<item
+    android:title=""
+    />
+        <item
+            android:title=""
+            />
+
+        <item
+            android:id="@+id/logoutBtn"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout" />
+    </group>
 </menu>
