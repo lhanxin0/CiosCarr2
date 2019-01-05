@@ -74,7 +74,7 @@ public class Login extends AppCompatActivity {
                 }else{
 //                    Toast.makeText(this, "Invalid Username or password! ",
 //                            Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(this, Choose_car_activity.class);
+                    Intent intent = new Intent(this, Choose_car.class);
                     startActivity(intent);
                 }
 

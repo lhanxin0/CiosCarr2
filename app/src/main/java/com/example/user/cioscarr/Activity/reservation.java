@@ -201,7 +201,7 @@ public class reservation extends main_navDrawer {
 
 
 
-        Intent intent = new Intent(this, Choose_car_activity.class);
+        Intent intent = new Intent(this, Choose_car.class);
         startActivity(intent);
 
 
