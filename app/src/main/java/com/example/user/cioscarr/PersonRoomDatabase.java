@@ -12,7 +12,7 @@ import com.example.user.cioscarr.DAO.PaymentDAO;
 import com.example.user.cioscarr.DAO.carDAO;
 import com.example.user.cioscarr.DAO.orderDAO;
 import com.example.user.cioscarr.DAO.order_carDAO;
-import com.example.user.cioscarr.DAO.personInterface;
+import com.example.user.cioscarr.DAO.personDAO;
 import com.example.user.cioscarr.DAO.supplierDAO;
 import com.example.user.cioscarr.entity.Car;
 import com.example.user.cioscarr.entity.Order;
@@ -26,7 +26,7 @@ import com.example.user.cioscarr.entity.Supplier;
 }, version = 5, exportSchema = false)
 public abstract class PersonRoomDatabase extends RoomDatabase {
 
-    public abstract personInterface PersonDao();
+    public abstract personDAO PersonDao();
     public abstract supplierDAO supplierDAO();
     public abstract orderDAO orderDAO();
     public abstract order_carDAO order_carDAO();
@@ -67,7 +67,7 @@ public abstract class PersonRoomDatabase extends RoomDatabase {
 
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
 
-        private final personInterface mDao;
+        private final personDAO mDao;
         private final supplierDAO sDao;
         private final carDAO cDao;
         private final order_carDAO ocDao;

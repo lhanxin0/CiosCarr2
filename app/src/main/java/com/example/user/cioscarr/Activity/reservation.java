@@ -206,7 +206,7 @@ public class reservation extends main_navDrawer {
         String take_time = txtTake_time.getText().toString();
         String return_time = txtReturn_time.getText().toString();
 
-        Intent intent = new Intent(this, Choose_car_activity.class);
+        Intent intent = new Intent(this, Choose_car.class);
         intent.putExtra(Extra_Message, take_car_date);
         intent.putExtra(Extra_Message1, return_car_date);
         Intent intent1 = new Intent(this, Register.class);
