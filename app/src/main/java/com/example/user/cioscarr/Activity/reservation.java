@@ -24,7 +24,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 public class reservation extends main_navDrawer {
 
@@ -54,24 +53,26 @@ public class reservation extends main_navDrawer {
         txtReturn_Date = findViewById(R.id.editText2);
         txtTake_time = findViewById(R.id.txtTime);
         txtReturn_time = findViewById(R.id.txtReturn_time);
-
-        svm = ViewModelProviders.of(this).get(SupplierViewModel.class);
         cvm = ViewModelProviders.of(this).get(CarViewModel.class);
+        svm = ViewModelProviders.of(this).get(SupplierViewModel.class);
+
 
 
 
        // txtReturn_Date.setText(cvm.getAllCarType().get(0));
        List<Supplier> SupplierArea = svm.getSupplier();
-       List<Car> CarType = cvm.getAllCarType();
+       List<String> CarType = cvm.getAllCarType();
+       txtTake_Date.setText(""+cvm.getAllCarType());
+
+
 
        List<String> area = new ArrayList<>();
-       List<String> car_type = new ArrayList<>();
+       List<String> ct = new ArrayList<>();
+       List<Car> car_type = new ArrayList<>();
        for(Supplier s : SupplierArea){
            area.add(s.getArea());
        }
-       for(Car c : CarType){
-           car_type.add(c.getCar_type());
-       }
+
 
         Spinner s = (Spinner) findViewById(R.id.spinnerArea);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -81,9 +82,10 @@ public class reservation extends main_navDrawer {
 
         Spinner stype = (Spinner) findViewById(R.id.spinnerCarType);
         ArrayAdapter<String> adapterCType = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, car_type);
+                android.R.layout.simple_spinner_item, cvm.getAllCarType());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         stype.setAdapter(adapterCType);
+
 
         // Date picker
         final DatePickerDialog.OnDateSetListener take_date = new DatePickerDialog.OnDateSetListener() {
@@ -196,17 +198,10 @@ public class reservation extends main_navDrawer {
 
     public void searchListener(View view) {
 
-        String take_car_date = txtTake_Date.getText().toString();
-        String return_car_date = txtReturn_Date.getText().toString();
-        String take_time = txtTake_time.getText().toString();
-        String return_time = txtReturn_time.getText().toString();
+
+
 
         Intent intent = new Intent(this, Choose_car_activity.class);
-        intent.putExtra(Extra_Message, take_car_date);
-        intent.putExtra(Extra_Message1, return_car_date);
-        Intent intent1 = new Intent(this, Register.class);
-
-
         startActivity(intent);
 
 

@@ -2,12 +2,11 @@ package com.example.user.cioscarr.Activity;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.user.cioscarr.R;
 import com.example.user.cioscarr.ViewModel.CarViewModel;
@@ -73,8 +72,10 @@ public class Login extends AppCompatActivity {
                     intent.putExtra(Extra_Message, id);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(this, "Invalid Username or password! ",
-                            Toast.LENGTH_LONG).show();
+//                    Toast.makeText(this, "Invalid Username or password! ",
+//                            Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(this, Choose_car_activity.class);
+                    startActivity(intent);
                 }
 
             }
