@@ -64,7 +64,7 @@ public class Login extends AppCompatActivity {
 
         person = pvm.getPerson();
         if (id.equalsIgnoreCase("alpha") && pass.equalsIgnoreCase("alpha")) {
-            Intent intent = new Intent(this, payment.class);
+            Intent intent = new Intent(this, forget_password.class);
             startActivity(intent);
         } else {
             for (Person p : person) {
