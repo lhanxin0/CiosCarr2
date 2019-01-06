@@ -30,11 +30,11 @@ public class Register extends AppCompatActivity {
         setTitle("Sign Up");
         setContentView(R.layout.activity_register);
 
-        uid = findViewById(R.id.txtUName);
-        password = findViewById(R.id.txtPass);
-        name = findViewById(R.id.txtName);
-        ic_num = findViewById(R.id.txtIc);
-        contact = findViewById(R.id.txtContact);
+        uid = findViewById(R.id.txt_add_CType);
+        password = findViewById(R.id.txtAdd_car_name);
+        name = findViewById(R.id.txtAdd_car_color);
+        ic_num = findViewById(R.id.txtAdd_car_desc);
+        contact = findViewById(R.id.txtCompany_address);
         email = findViewById(R.id.txtEmail);
 
         pvm = ViewModelProviders.of(this).get(PersonViewModel.class);
@@ -87,11 +87,11 @@ public class Register extends AppCompatActivity {
 
     }
 
-    public void imageListener(View view) {
-        Intent pickPhoto = new Intent(Intent.ACTION_PICK,
-                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(pickPhoto, 1);
-    }
+//    public void imageListener(View view) {
+//        Intent pickPhoto = new Intent(Intent.ACTION_PICK,
+//                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//        startActivityForResult(pickPhoto, 1);
+//    }
 //    protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
 //        super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
 //        switch(requestCode) {

@@ -22,4 +22,7 @@ public interface personDAO {
 
     @Query("SELECT * from person ")
     List<Person> getPerson();
+
+    @Query("SELECT * from person where uid=:id ")
+    Person getPersonbyID(String id);
 }

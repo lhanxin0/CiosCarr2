@@ -23,6 +23,10 @@ public class PersonViewModel extends AndroidViewModel {
 
     }
 
+    public Person getPersonById(String id){
+        return pRepository.getPersonById(id);
+    }
+
     public LiveData<List<Person>> getAllPerson() {
         return allPerson;
     }

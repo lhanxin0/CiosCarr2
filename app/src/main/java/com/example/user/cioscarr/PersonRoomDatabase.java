@@ -23,7 +23,7 @@ import com.example.user.cioscarr.entity.Supplier;
 
 
 @Database(entities = {Person.class,Supplier.class,Order.class,Car.class,Order_car.class,Payment_for_db.class
-}, version = 8, exportSchema = false)
+}, version = 9, exportSchema = false)
 public abstract class PersonRoomDatabase extends RoomDatabase {
 
     public abstract personDAO PersonDao();
@@ -102,7 +102,7 @@ public abstract class PersonRoomDatabase extends RoomDatabase {
                     "213112313","gg","Setapak","Setapak"));
 
             cDao.insert(new Car("C0001",
-                    "Nissan","Kancil","grey","bestCar",
+                    "Nissan","12/12/2018","Kancil","grey","bestCar",
                     2.0,"Available","S0001",null));
 
             ocDao.insert(new Order_car("OC0001","21/12/1111","21/12/1111", "11:11", "12:12","O0001", "C0001"));

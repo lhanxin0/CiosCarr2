@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.user.cioscarr.Activity.Booking_detail;
 import com.example.user.cioscarr.R;
 import com.example.user.cioscarr.entity.Car;
 
@@ -100,7 +101,7 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
 
             // Do your another stuff for your onClick
             Car current = allcars.get(selectedPos);
-            Intent intent=new Intent(this, );
+            Intent intent=new Intent(v.getContext(),Booking_detail.class);
             intent.putExtra("selectedID", current.getCar_id());
 
         }
