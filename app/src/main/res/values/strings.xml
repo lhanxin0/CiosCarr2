@@ -34,7 +34,8 @@
     <string name="search">Search</string>
     <string name="pick_up">Pick-up :</string>
     <string name="payment_details">Payment Details :</string>
-    <string name="date_time_location">Date time location</string>
+    <string name="date_time">Date time</string>
+    <string name="location">Location</string>
     <string name="drop_off">Drop-Off :</string>
     <string name="car_name">Car Name</string>
     <string name="car_specification">Car Specification</string>

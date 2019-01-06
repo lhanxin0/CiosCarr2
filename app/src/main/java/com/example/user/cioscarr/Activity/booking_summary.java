@@ -23,7 +23,7 @@ public class booking_summary extends main_navDrawer {
         drawer.addView(contentView, 0);
 
         TextView carName = findViewById(R.id.txtCar_name);
-        TextView pickUpDate = findViewById(R.id.txtPickup_datetime);
+        TextView pickUpDetail2 = findViewById(R.id.txtPickup_location);
         TextView pickUpDetail = findViewById(R.id.txtPickup_detail);
         TextView dropOffDate = findViewById(R.id.txtDropoff_datetime);
         TextView dropOffDetail = findViewById(R.id.txtDropoff_detail);
@@ -39,9 +39,11 @@ public class booking_summary extends main_navDrawer {
         dropOffDetail.setText(pay_date);
         String payment_detail = intent.getStringExtra(payment.paymentDetails);
         paymentDetail.setText(payment_detail);
+
         String card_expiry = intent.getStringExtra(payment.cardExpiry);
         totalPrice.setText(card_expiry);
 
+        pickUpDetail2.setText(card_expiry);
     }
 
     public void returnPayment(View view) {
