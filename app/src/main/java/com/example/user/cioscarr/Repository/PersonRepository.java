@@ -35,6 +35,9 @@ public class PersonRepository  {
         return person;
     }
 
+    public Person getPersonById(String id){
+        return personDao.getPersonbyID(id);
+    }
 
     public void insert (Person uid) {
         new insertAsyncTask(personDao).execute(uid);

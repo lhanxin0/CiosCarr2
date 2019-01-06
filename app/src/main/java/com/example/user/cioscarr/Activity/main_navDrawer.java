@@ -15,7 +15,7 @@ import com.example.user.cioscarr.R;
 
 public class main_navDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    private String id;
     protected DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,8 @@ public class main_navDrawer extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -81,8 +83,9 @@ public class main_navDrawer extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_profile) {
-            Intent intent = new Intent(this,reservation.class);
-          //  startActivity(intent);
+            Intent intent = new Intent(this,dbArchitecture.class);
+            intent.putExtra("customerID",id);
+            startActivity(intent);
 
         } else if (id == R.id.nav_paymentMethod) {
             Intent intent = new Intent(this,reservation.class);
@@ -108,6 +111,9 @@ public class main_navDrawer extends AppCompatActivity
         return true;
     }
 
+    public void setCustID(String id){
+    this.id = id;
+    }
 
 
 }

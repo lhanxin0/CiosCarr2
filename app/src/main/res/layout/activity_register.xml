@@ -15,7 +15,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/txtUName"
+                android:id="@+id/txt_add_CType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -29,10 +29,10 @@
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/registerHead" />
+                app:layout_constraintTop_toBottomOf="@+id/addSupplier_head" />
 
             <EditText
-                android:id="@+id/txtContact"
+                android:id="@+id/txtCompany_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -46,10 +46,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtIc" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAdd_car_desc" />
 
             <EditText
-                android:id="@+id/txtName"
+                android:id="@+id/txtAdd_car_color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -63,10 +63,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtPass" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAdd_car_name" />
 
             <EditText
-                android:id="@+id/txtIc"
+                android:id="@+id/txtAdd_car_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -80,10 +80,10 @@
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtName" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAdd_car_color" />
 
             <EditText
-                android:id="@+id/txtPass"
+                android:id="@+id/txtAdd_car_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -97,7 +97,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtUName" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_add_CType" />
 
             <EditText
                 android:id="@+id/txtEmail"
@@ -114,10 +114,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtContact" />
+                app:layout_constraintTop_toBottomOf="@+id/txtCompany_address" />
 
             <TextView
-                android:id="@+id/registerHead"
+                android:id="@+id/addSupplier_head"
                 android:layout_width="211dp"
                 android:layout_height="29dp"
                 android:layout_marginStart="8dp"
@@ -131,20 +131,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="92dp"
-                android:layout_height="47dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:onClick="imageListener"
-                android:text="Button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="489dp" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
