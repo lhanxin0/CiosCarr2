@@ -25,6 +25,11 @@ public class SupplierViewModel extends AndroidViewModel {
    public LiveData<List<Supplier>> getAllSupplier() {
         return allSupplier;
     }
+
+    public Supplier getSupplierById(String sid)
+    {
+        return sRepository.getSupplierById(sid);
+    }
    public List<Supplier> getSupplier() {
         return Supplier;
     }

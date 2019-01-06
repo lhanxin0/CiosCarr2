@@ -12,6 +12,8 @@ import com.example.user.cioscarr.Activity.Booking_detail;
 import com.example.user.cioscarr.R;
 import com.example.user.cioscarr.entity.Car;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> {
@@ -23,6 +25,7 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
     private String custId;
     private String takedate;
     private String returndate;
+    private float difdays;
     private int selectedPos = RecyclerView.NO_POSITION;
 
 
@@ -42,12 +45,19 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
     public void onBindViewHolder(WordViewHolder holder, int position) {
 
         if (allcars != null) {
-
-            Car current = allcars.get(position);
-            holder.wordItemView.setText(current.getCar_name());
-            holder.wordItemView2.setText(current. getCar_desc());
-            holder.wordItemView3.setText(String.format("RM %.2f",current.getCar_price()));
-            holder.itemView.setSelected(selectedPos == position);
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                Date takeda = sdf.parse(takedate);
+                Date returnda = sdf.parse(returndate);
+               long diff = returnda.getTime()-takeda.getTime();
+              float days = (diff/(1000*60*60*24)) + 1;
+              difdays = days;
+                Car current = allcars.get(position);
+                holder.wordItemView.setText(current.getCar_name());
+                holder.wordItemView2.setText(current.getCar_desc());
+                holder.wordItemView3.setText(String.format("RM %.2f", days*current.getCar_price()));  // current.getCar_price()
+                holder.itemView.setSelected(selectedPos == position);
+            }catch(Exception ex){}
         } else {
             // Covers the case of data not being ready yet.
             holder.wordItemView.setText("No Word");
@@ -115,7 +125,7 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
 
             intent.putExtra("selectedName", current.getCar_name());
             intent.putExtra("carid", current.getCar_id());
-            intent.putExtra("selectedPrice",String.format("%.2f",current.getCar_price()));
+            intent.putExtra("selectedPrice",String.format("%.2f",difdays*current.getCar_price()));
             intent.putExtra("custID", custId);
             intent.putExtra("takedate", takedate);
             intent.putExtra("returndate", returndate);

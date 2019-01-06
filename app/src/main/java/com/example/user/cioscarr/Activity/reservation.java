@@ -66,7 +66,7 @@ public class reservation extends main_navDrawer {
        // txtReturn_Date.setText(cvm.getAllCarType().get(0));
        List<Supplier> SupplierArea = svm.getSupplier();
        List<String> CarType = cvm.getAllCarType();
-       txtTake_Date.setText(""+cvm.getAllCarType());
+
 
 
 
@@ -208,8 +208,8 @@ public class reservation extends main_navDrawer {
         intent.putExtra("carType", cartype);
         intent.putExtra("carArea", cararea);
         intent.putExtra("custID", intent2.getStringExtra("Extra_Message"));
-        intent.putExtra("takedate", txtTake_Date.getText());
-        intent.putExtra("returndate", txtReturn_Date.getText());
+        intent.putExtra("takedate", txtTake_Date.getText().toString());
+        intent.putExtra("returndate", txtReturn_Date.getText().toString());
         startActivity(intent);
 
 

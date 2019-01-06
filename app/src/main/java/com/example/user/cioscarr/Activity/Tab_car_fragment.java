@@ -45,7 +45,7 @@ public class Tab_car_fragment extends Fragment {
         Car c = cvm.getCarById(carid);
 
         tvname.setText(carname);
-        txtprice.setText(carprice);
+        txtprice.setText("RM "+carprice);
         txtcolor.setText(c.getCar_color());
         txtdesc.setText(c.getCar_desc());
 
