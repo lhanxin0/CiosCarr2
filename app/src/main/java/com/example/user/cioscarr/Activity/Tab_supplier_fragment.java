@@ -31,6 +31,7 @@ public class Tab_supplier_fragment extends Fragment {
 
         Intent intent = getActivity().getIntent();
         String carid = intent.getStringExtra("carid");
+        String cid = intent.getStringExtra("custID");
 
         cvm = ViewModelProviders.of(this).get(CarViewModel.class);
         svm = ViewModelProviders.of(this).get(SupplierViewModel.class);
@@ -39,6 +40,7 @@ public class Tab_supplier_fragment extends Fragment {
 
         tvdetails.setText("Company Name: "+s.getCompany_name()+"\nCompany Contact: "+s.getCompany_contact()+"\nSupplier Name: "+s.getSupplier_Name()+"\nSupplier Contact: "+s.getSupplier_contact()+"\n"+s.getArea());
         tvlocation.setText(s.getCompany_address());
+        
 
 
         return contentView;

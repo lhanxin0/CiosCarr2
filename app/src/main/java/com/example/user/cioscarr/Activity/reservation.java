@@ -17,7 +17,6 @@ import android.widget.TimePicker;
 import com.example.user.cioscarr.R;
 import com.example.user.cioscarr.ViewModel.CarViewModel;
 import com.example.user.cioscarr.ViewModel.SupplierViewModel;
-import com.example.user.cioscarr.entity.Car;
 import com.example.user.cioscarr.entity.Supplier;
 
 import java.text.SimpleDateFormat;
@@ -72,11 +71,33 @@ public class reservation extends main_navDrawer {
 
        List<String> area = new ArrayList<>();
        List<String> ct = new ArrayList<>();
-       List<Car> car_type = new ArrayList<>();
+       List<String> car_type = new ArrayList<>();
        for(Supplier s : SupplierArea){
            area.add(s.getArea());
        }
 
+       ct = cvm.getAllCarType();
+
+       for(String cc:ct)
+       {
+           int count=0;
+           if(car_type.size()==0)
+               car_type.add(cc);
+           else
+           {
+               for(String ccc:car_type)
+               {
+                   if(ccc.equals(cc))
+                   {
+                       count=1;
+                   }
+               }
+               if(count==0)
+               {
+                   car_type.add(cc);
+               }
+           }
+       }
 
         s = (Spinner) findViewById(R.id.spinnerArea);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -86,7 +107,7 @@ public class reservation extends main_navDrawer {
 
         stype = (Spinner) findViewById(R.id.spinnerCarType);
         ArrayAdapter<String> adapterCType = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, cvm.getAllCarType());
+                android.R.layout.simple_spinner_item, car_type);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         stype.setAdapter(adapterCType);
 
@@ -207,7 +228,7 @@ public class reservation extends main_navDrawer {
         Intent intent2 = getIntent();
         intent.putExtra("carType", cartype);
         intent.putExtra("carArea", cararea);
-        intent.putExtra("custID", intent2.getStringExtra("Extra_Message"));
+        intent.putExtra("custID", intent2.getStringExtra("custID"));
         intent.putExtra("takedate", txtTake_Date.getText().toString());
         intent.putExtra("returndate", txtReturn_Date.getText().toString());
         startActivity(intent);

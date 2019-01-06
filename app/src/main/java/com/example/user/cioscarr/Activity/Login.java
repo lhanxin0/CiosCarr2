@@ -70,7 +70,7 @@ public class Login extends AppCompatActivity {
             for (Person p : person) {
                 if (id.equals(p.getUid()) && pass.equals(p.getPassword())) {
                     Intent intent = new Intent(this, reservation.class);
-                    intent.putExtra(Extra_Message, id);
+                    intent.putExtra("custID", id);
                     startActivity(intent);
                     count=1;
                 }
