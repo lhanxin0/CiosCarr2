@@ -9,10 +9,12 @@ import android.view.View;
 
 import com.example.user.cioscarr.Adapter.TabPageAdapter;
 import com.example.user.cioscarr.R;
+import com.example.user.cioscarr.ViewModel.CarViewModel;
 
 public class Booking_detail extends main_navDrawer {
     private TabPageAdapter tabPageAdapter;
     private ViewPager mViewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -36,6 +36,11 @@ public class CarViewModel extends AndroidViewModel {
         return allCarType;
     }
 
+    public Car getCarById(String carid)
+    {
+        return cRepository.getCarById(carid);
+    }
+
     public void insert(Car car) {
         cRepository.insert(car);
     }

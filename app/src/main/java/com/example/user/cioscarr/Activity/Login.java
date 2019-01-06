@@ -64,13 +64,13 @@ public class Login extends AppCompatActivity {
 
         person = pvm.getPerson();
         if (id.equalsIgnoreCase("alpha") && pass.equalsIgnoreCase("alpha")) {
-            Intent intent = new Intent(this, forget_password.class);
+            Intent intent = new Intent(this, reservation.class);
             startActivity(intent);
         } else {
             for (Person p : person) {
                 if (id.equals(p.getUid()) && pass.equals(p.getPassword())) {
                     Intent intent = new Intent(this, reservation.class);
-                    intent.putExtra(Extra_Message, id);
+                    intent.putExtra("custID", id);
                     startActivity(intent);
                     count=1;
                 }

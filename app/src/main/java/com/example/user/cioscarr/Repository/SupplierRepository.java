@@ -26,6 +26,11 @@ public class SupplierRepository {
    public LiveData<List<Supplier>> getAllSupplier() {
         return allSupplier;
     }
+
+    public Supplier getSupplierById(String sid)
+    {
+        return supplierDAO.getSupplierById(sid);
+    }
    public List<Supplier> getSupplier() {
         return allSupplierID;
     }

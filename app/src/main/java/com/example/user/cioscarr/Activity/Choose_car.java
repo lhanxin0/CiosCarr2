@@ -37,6 +37,8 @@ public class Choose_car extends main_navDrawer {
 //
         RecyclerView recyclerView = findViewById(R.id.recyclerView1);
         final carAdapter adapter1 = new carAdapter(this);
+        Intent custintent = getIntent();
+        adapter1.setCustID(custintent.getStringExtra("custID"), custintent.getStringExtra("takedate"), custintent.getStringExtra("returndate"));
         recyclerView.setAdapter(adapter1);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -44,6 +46,9 @@ public class Choose_car extends main_navDrawer {
         Intent intent = getIntent();
         String cartype=intent.getStringExtra("carType");
         String cararea=intent.getStringExtra("carArea");
+        String custID=intent.getStringExtra("custID");
+
+
 
         cvm.getAllCarTypeArea(cartype, cararea).observe(this, new Observer<List<Car>>() {
             @Override
@@ -53,6 +58,7 @@ public class Choose_car extends main_navDrawer {
                adapter1.setWords(cars);
             }
         });
+
 
 
     }
