@@ -23,6 +23,10 @@ public class PersonViewModel extends AndroidViewModel {
 
     }
 
+    public Person getPersonById(String id){
+        return pRepository.getPersonById(id);
+    }
+
     public LiveData<List<Person>> getAllPerson() {
         return allPerson;
     }
@@ -33,5 +37,7 @@ public class PersonViewModel extends AndroidViewModel {
     public void insert(Person uid) {
         pRepository.insert(uid);
     }
-
+    public void update (Person updatePerson){
+        pRepository.update(updatePerson);
+    }
 }

@@ -35,6 +35,13 @@ public class PersonRepository  {
         return person;
     }
 
+    public Person getPersonById(String id){
+        return personDao.getPersonbyID(id);
+    }
+
+    public void update (Person updatePerson) {
+        new updateAsycnTask(personDao).execute(updatePerson);
+    }
 
     public void insert (Person uid) {
         new insertAsyncTask(personDao).execute(uid);
@@ -51,6 +58,20 @@ public class PersonRepository  {
         @Override
         protected Void doInBackground(final Person... params) {
             mAsyncTaskDao.insert(params[0]);
+            return null;
+        }
+    }
+    private static class updateAsycnTask extends AsyncTask<Person, Void, Void> {
+
+        private personDAO pDao;
+
+       public updateAsycnTask(personDAO dao) {
+            pDao = dao;
+        }
+
+        @Override
+        protected Void doInBackground(final Person... params) {
+            pDao.update(params[0]);
             return null;
         }
     }

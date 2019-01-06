@@ -2,9 +2,9 @@ package com.example.user.cioscarr.Activity;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         txtId = findViewById(R.id.txtUsername);
-        txtPass = findViewById(R.id.txtPass);
+        txtPass = findViewById(R.id.txtAdd_car_name);
 
         pvm = ViewModelProviders.of(this).get(PersonViewModel.class);
         svm = ViewModelProviders.of(this).get(SupplierViewModel.class);
@@ -52,7 +52,7 @@ public class Login extends AppCompatActivity {
     }
 
     public static final String Extra_Message1 = "com.example.user.cioscarr.Extra_Message1";
-    public static final String Extra_Message = "com.example.user.cioscarr.Extra_Message1";
+    public static final String Extra_Message = "com.example.user.cioscarr.Extra_Message";
     private List<Person> person;
 
 

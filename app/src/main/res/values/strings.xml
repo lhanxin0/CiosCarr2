@@ -41,4 +41,11 @@
     <string name="supplier_location">Supplier Location</string>
     <string name="your_supplier_details">Your Supplier Details</string>
     <string name="book_this_car">Book this car</string>
+    <string name="add">Add</string>
+    <string name="add_supplier">Add Supplier</string>
+    <string name="area">Area</string>
+    <string name="contact">Contact</string>
+    <string name="company_contact">Company Contact</string>
+    <string name="company_name">Company name</string>
+    <string name="company_address">Company Address</string>
 </resources>
