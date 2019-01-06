@@ -24,6 +24,9 @@ public class Car {
     @ColumnInfo(name = "car_year")
     private String car_year;
 
+    @ColumnInfo(name = "car_plate_no")
+    private String car_plate_no;
+
     @ColumnInfo(name = "car_name")
     private String car_name;
 
@@ -45,10 +48,11 @@ public class Car {
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB,name = "carImg")
     private byte[] carImg;
 
-    public Car(@NonNull String car_id, String car_type, String car_year, String car_name, String car_color, String car_desc, double car_price, String status, String supplier_id, byte[] carImg) {
+    public Car(@NonNull String car_id, String car_type, String car_year, String car_plate_no, String car_name, String car_color, String car_desc, double car_price, String status, String supplier_id, byte[] carImg) {
         this.car_id = car_id;
         this.car_type = car_type;
         this.car_year = car_year;
+        this.car_plate_no = car_plate_no;
         this.car_name = car_name;
         this.car_color = car_color;
         this.car_desc = car_desc;
@@ -65,6 +69,10 @@ public class Car {
 
     public String getCar_type() {
         return car_type;
+    }
+
+    public String getCar_plate_no() {
+        return car_plate_no;
     }
 
     public String getCar_year() {

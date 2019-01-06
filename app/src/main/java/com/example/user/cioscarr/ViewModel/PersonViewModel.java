@@ -37,5 +37,7 @@ public class PersonViewModel extends AndroidViewModel {
     public void insert(Person uid) {
         pRepository.insert(uid);
     }
-
+    public void update (Person updatePerson){
+        pRepository.update(updatePerson);
+    }
 }

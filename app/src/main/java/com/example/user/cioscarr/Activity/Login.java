@@ -52,7 +52,7 @@ public class Login extends AppCompatActivity {
     }
 
     public static final String Extra_Message1 = "com.example.user.cioscarr.Extra_Message1";
-    public static final String Extra_Message = "com.example.user.cioscarr.Extra_Message1";
+    public static final String Extra_Message = "com.example.user.cioscarr.Extra_Message";
     private List<Person> person;
 
 

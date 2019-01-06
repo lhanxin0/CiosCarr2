@@ -15,7 +15,7 @@ import com.example.user.cioscarr.R;
 
 public class main_navDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private String id;
+    private String custid;
     protected DrawerLayout drawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +84,7 @@ public class main_navDrawer extends AppCompatActivity
 
         } else if (id == R.id.nav_profile) {
             Intent intent = new Intent(this,dbArchitecture.class);
-            intent.putExtra("customerID",id);
+            intent.putExtra("customerID",custid);
             startActivity(intent);
 
         } else if (id == R.id.nav_paymentMethod) {
@@ -112,7 +112,7 @@ public class main_navDrawer extends AppCompatActivity
     }
 
     public void setCustID(String id){
-    this.id = id;
+    this.custid = id;
     }
 
 

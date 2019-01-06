@@ -2,6 +2,10 @@ package com.example.user.cioscarr.Activity;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +17,7 @@ import com.example.user.cioscarr.ViewModel.PersonViewModel;
 import com.example.user.cioscarr.ViewModel.SupplierViewModel;
 import com.example.user.cioscarr.entity.Person;
 
+import java.io.ByteArrayOutputStream;
 import java.util.List;
 
 public class Register extends AppCompatActivity {
@@ -77,11 +82,17 @@ public class Register extends AppCompatActivity {
         }
 
         if(count == 0) {
+            Resources resource = getResources();
+            Drawable drawable = resource.getDrawable(R.drawable.profile); // the drawable (Captain Obvious, to the rescue!!!)
+            Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            byte[] bitmapdata = stream.toByteArray();
 
-        Person person1 = new Person(id,name1, pass,ic, contact1,email1,null );
+        Person person1 = new Person(id,name1, pass,ic, contact1,email1,bitmapdata );
         pvm.insert(person1);
        // uid.setText(pvm.getPerson().get(3).getUid());
-        Intent intent = new Intent(this,reservation.class);
+        Intent intent = new Intent(this,Login.class);
         startActivity(intent);
         }
 
