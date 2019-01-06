@@ -51,8 +51,8 @@ public class reservation extends main_navDrawer {
         View contentView = inflater.inflate(R.layout.activity_reservation, null, false);
         drawer.addView(contentView, 0);
 
-        Intent intent = getIntent();
-        String custID = intent.getStringExtra(Extra_Message);
+        Intent intent3 = getIntent();
+        String custID = intent3.getStringExtra("custID");
         super.setCustID(custID);
 
         // Find date and time txtbox

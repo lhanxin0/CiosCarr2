@@ -6,11 +6,11 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.user.cioscarr.R;
 import com.example.user.cioscarr.ViewModel.PersonViewModel;
@@ -66,20 +66,26 @@ public class Register extends AppCompatActivity {
         for(Person p : person) {
           //  for(Supplier s :supplier ){
             if(id.equals(p.getUid())){
-                Toast.makeText(this, "Username has been exists! ",
-                        Toast.LENGTH_LONG).show();
+                uid.setError("Username has been exists! ");
+                uid.requestFocus();
                 count = 1;
             }else if( contact1.equals(p.getContact())) {
-                    Toast.makeText(this, "Contact Number has been exists ! ",
-                            Toast.LENGTH_LONG).show();
+                uid.setError("Contact No has been exists! ");
+                uid.requestFocus();
                     count = 1;
             }else if (email1.equals(p.getEmail())){
-                Toast.makeText(this, "Email has been exists ! ",
-                        Toast.LENGTH_LONG).show();
+                uid.setError("Email has been exists! ");
+                uid.requestFocus();
                 count = 1;
             }
          //   }
         }
+
+        if(!validEmail(email1))
+        {
+            email.setError("Invalid email!");
+        }
+
 
         if(count == 0) {
             Resources resource = getResources();
@@ -120,4 +126,10 @@ public class Register extends AppCompatActivity {
 //                break;
 //        }
 //    }
+
+    public boolean validEmail(CharSequence target)
+    {
+        return target != null && Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
 }
+

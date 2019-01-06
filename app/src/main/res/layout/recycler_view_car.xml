@@ -22,6 +22,7 @@
           android:id="@+id/txtCarName"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+
           android:layout_marginLeft="10dp"
           android:layout_marginRight="10dp"
           android:layout_weight="1"
@@ -37,20 +38,20 @@
 
       <ImageView
           android:id="@+id/imgCar"
-          android:layout_width="wrap_content"
+          android:layout_width="0dp"
           android:layout_height="wrap_content"
-          android:minHeight="120px"
           android:maxHeight="200px"
+          android:minHeight="120px"
           tools:srcCompat="@tools:sample/avatars" />
 
       <TextView
           android:id="@+id/txtCarDetail"
-          android:layout_width="wrap_content"
+          android:layout_width="0dp"
           android:layout_height="wrap_content"
           android:layout_marginLeft="10dp"
           android:layout_marginRight="10dp"
           android:layout_weight="1"
-          android:gravity="center_horizontal"
+          android:gravity="left"
           tools:text="@tools:sample/lorem" />
     </TableRow>
 

@@ -2,10 +2,15 @@ package com.example.user.cioscarr.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.user.cioscarr.Activity.Booking_detail;
@@ -54,9 +59,23 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
               difdays = days;
                 Car current = allcars.get(position);
                 holder.wordItemView.setText(current.getCar_name());
-                holder.wordItemView2.setText(current.getCar_desc());
-                holder.wordItemView3.setText(String.format("RM %.2f", days*current.getCar_price()));  // current.getCar_price()
+                holder.wordItemView2.setText("Car ID: "+current.getCar_id()+"\nDescription: "+current.getCar_desc() + "\nColor: " + current.getCar_color() +
+                        "\nPlate No:" + current.getCar_plate_no() + "\nBrand: " + current.getCar_type() + "\nYear of Car: " + current.getCar_year());
+                holder.wordItemView3.setText(String.format("%.0f days @ RM %.2f = RM %.2f", days, current.getCar_price(), days*current.getCar_price()));  // current.getCar_price()
                 holder.itemView.setSelected(selectedPos == position);
+
+                if(current.getCarImg()!=null){
+                 Bitmap bitmap = BitmapFactory.decodeByteArray(current.getCarImg(), 0, current.getCarImg().length);
+                    holder.imgview.setImageBitmap(bitmap);
+                }else{
+                    Resources resource = holder.itemView.getContext().getResources();
+                    Drawable drawable = resource.getDrawable(R.drawable.logo);
+                    holder.imgview.setImageDrawable(drawable);
+                }
+
+
+
+
             }catch(Exception ex){}
         } else {
             // Covers the case of data not being ready yet.
@@ -94,6 +113,7 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
         private final TextView wordItemView;
         private final TextView wordItemView2;
         private final TextView wordItemView3;
+        private final ImageView imgview;
 
 
 
@@ -102,6 +122,7 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
             wordItemView = itemView.findViewById(R.id.txtCarName);
             wordItemView2 = itemView.findViewById(R.id.txtCarDetail);
             wordItemView3 = itemView.findViewById(R.id.txtPrice);
+            imgview = itemView.findViewById(R.id.imgCar);
             itemView.setOnClickListener(this);
 
         }

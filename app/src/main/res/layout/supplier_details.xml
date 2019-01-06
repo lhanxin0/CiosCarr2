@@ -1,6 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.dbArchitecture"
+    android:background="@android:color/white"
+    >
+
+
+
+    <TableLayout
+        android:id="@+id/tableLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="274dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgProfile">
+
+
+        <TableRow
+            android:layout_width="419dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txtview"
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Supplier Name" />
+
+            <EditText
+                android:id="@+id/txtSupplier_name"
+                android:layout_width="314dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="TextView"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txtview3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Contact" />
+
+            <EditText
+                android:id="@+id/txtSupplier_contact"
+                android:layout_width="314dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="TextView"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txtview4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Company Address " />
+
+            <EditText
+                android:id="@+id/txtUser_email"
+                android:layout_width="314dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="TextView"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/txtview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Company Contact" />
+
+            <EditText
+                android:id="@+id/txtUser_ic"
+                android:layout_width="314dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text=""
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/company_Name"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="Company Name"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/txtUser_pass"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+
+                android:text="TextView"
+                android:textColor="@android:color/black" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btnEditConfirm"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:background="#5BC236"
+        android:clickable="false"
+        android:onClick="confirmEditListener"
+        android:text="Confirm"
+        android:textColor="@android:color/white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:alpha="0.0"
+        android:clickable="true"
+        android:onClick="uploadPicListener"
+        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2"
+        app:srcCompat="@drawable/ic_file_upload_black_24dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:onClick="editProfileListener"
+        app:layout_constraintBottom_toTopOf="@+id/btnEditConfirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_edit" />
+
+    <Button
+        android:id="@+id/btnCancelEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:onClick="cancelEditListener"
+        android:text="Cancel"
+        android:textColor="@android:color/white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnEditConfirm" />
+
 
 </android.support.constraint.ConstraintLayout>

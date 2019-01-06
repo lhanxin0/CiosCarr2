@@ -1,7 +1,6 @@
 package com.example.user.cioscarr.Activity;
 
 import android.app.Activity;
-import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
@@ -10,13 +9,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.provider.MediaStore;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.provider.MediaStore;
+import android.support.design.widget.FloatingActionButton;
 import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,17 +19,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.user.cioscarr.Adapter.PersonAdapter;
 import com.example.user.cioscarr.R;
 import com.example.user.cioscarr.Repository.PersonRepository;
 import com.example.user.cioscarr.ViewModel.PersonViewModel;
 import com.example.user.cioscarr.entity.Person;
 
 import java.io.ByteArrayOutputStream;
-import java.util.List;
 
 public class dbArchitecture extends main_navDrawer {
     private PersonViewModel pvm;
