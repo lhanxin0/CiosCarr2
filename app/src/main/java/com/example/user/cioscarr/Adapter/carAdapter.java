@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.user.cioscarr.Activity.Booking_detail;
 import com.example.user.cioscarr.R;
 import com.example.user.cioscarr.entity.Car;
 
@@ -19,6 +20,9 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
     private List<Car> allcars;
     private String type;
     private String area;
+    private String custId;
+    private String takedate;
+    private String returndate;
     private int selectedPos = RecyclerView.NO_POSITION;
 
 
@@ -69,7 +73,12 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
             return 0;
     }
 
-
+    public void setCustID(String custid, String taked, String returnd)
+    {
+        custId = custid;
+        takedate = taked;
+        returndate = returnd;
+    }
 
     public class WordViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private final TextView wordItemView;
@@ -100,9 +109,18 @@ public class carAdapter extends RecyclerView.Adapter<carAdapter.WordViewHolder> 
 
             // Do your another stuff for your onClick
             Car current = allcars.get(selectedPos);
-            Intent intent=new Intent(this, );
-            intent.putExtra("selectedID", current.getCar_id());
 
+            Intent intent=new Intent(v.getContext(), Booking_detail.class);
+
+
+            intent.putExtra("selectedName", current.getCar_name());
+            intent.putExtra("carid", current.getCar_id());
+            intent.putExtra("selectedPrice",String.format("%.2f",current.getCar_price()));
+            intent.putExtra("custID", custId);
+            intent.putExtra("takedate", takedate);
+            intent.putExtra("returndate", returndate);
+
+            v.getContext().startActivity(intent);
         }
     }
 

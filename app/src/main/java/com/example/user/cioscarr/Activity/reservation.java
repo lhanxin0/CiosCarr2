@@ -41,6 +41,8 @@ public class reservation extends main_navDrawer {
     private Spinner s;
     private Spinner stype;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -202,8 +204,12 @@ public class reservation extends main_navDrawer {
         String cartype = stype.getSelectedItem().toString();
         String cararea = s.getSelectedItem().toString();
         Intent intent = new Intent(this, Choose_car.class);
+        Intent intent2 = getIntent();
         intent.putExtra("carType", cartype);
         intent.putExtra("carArea", cararea);
+        intent.putExtra("custID", intent2.getStringExtra("Extra_Message"));
+        intent.putExtra("takedate", txtTake_Date.getText());
+        intent.putExtra("returndate", txtReturn_Date.getText());
         startActivity(intent);
 
 
