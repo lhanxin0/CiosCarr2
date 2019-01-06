@@ -10,7 +10,7 @@ public class Supplier {
 
     @PrimaryKey
     @NonNull
-    @ColumnInfo(name = "supplier_id")
+    @ColumnInfo(name = "supplier_ID")
     private String supplier_ID;
 
     @ColumnInfo(name = "supplier_name")

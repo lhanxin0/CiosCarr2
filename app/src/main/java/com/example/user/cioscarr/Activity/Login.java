@@ -59,12 +59,12 @@ public class Login extends AppCompatActivity {
     public void signIn(View view) {
         String id = txtId.getText().toString();
         String pass = txtPass.getText().toString();
-
+        int count=0;
         //Sign in ( need link with db)
 
         person = pvm.getPerson();
         if (id.equalsIgnoreCase("alpha") && pass.equalsIgnoreCase("alpha")) {
-            Intent intent = new Intent(this, Choose_car_activity.class);
+            Intent intent = new Intent(this, Booking_detail.class);
             startActivity(intent);
         } else {
             for (Person p : person) {
@@ -72,11 +72,13 @@ public class Login extends AppCompatActivity {
                     Intent intent = new Intent(this, reservation.class);
                     intent.putExtra(Extra_Message, id);
                     startActivity(intent);
-                }else{
-                    Toast.makeText(this, "Invalid Username or password! ",
-                            Toast.LENGTH_LONG).show();
+                    count=1;
                 }
-
+            }
+            if(count==0)
+            {
+                Toast.makeText(this, "Invalid Username or password! ",
+                        Toast.LENGTH_LONG).show();
             }
 
         }
