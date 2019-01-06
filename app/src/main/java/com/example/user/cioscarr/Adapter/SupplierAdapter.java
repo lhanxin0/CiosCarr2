@@ -28,7 +28,7 @@ public class SupplierAdapter extends RecyclerView.Adapter<SupplierAdapter.Suppli
     @NonNull
     @Override
     public SupplierAdapter.SupplierViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View itemView = sInflater.inflate(R.layout.recyclerview_supplier, viewGroup, false);
+        View itemView = sInflater.inflate(R.layout.recycler_view_supplier, viewGroup, false);
         return new SupplierViewHolder(itemView);
     }
 

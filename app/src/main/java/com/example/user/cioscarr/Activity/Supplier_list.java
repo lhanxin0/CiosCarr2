@@ -2,11 +2,15 @@ package com.example.user.cioscarr.Activity;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 
 import com.example.user.cioscarr.Adapter.SupplierAdapter;
 import com.example.user.cioscarr.R;
@@ -28,7 +32,7 @@ public class Supplier_list extends AppCompatActivity {
         RecyclerView rv=findViewById(R.id.recyclerView_supplier);
         final SupplierAdapter adapter=new SupplierAdapter(this);
         rv.setAdapter(adapter);
-//        rv.setLayoutManager(new LinearLayoutManager(this));
+        rv.setLayoutManager(new LinearLayoutManager(this));
 
         svm=ViewModelProviders.of(this).get(SupplierViewModel.class);
 
@@ -40,5 +44,32 @@ public class Supplier_list extends AppCompatActivity {
         });
 
 
+    }
+
+    public void gotoAddsupplier(View view) {
+        Intent intent=new Intent(this,add_supplier.class);
+        startActivity(intent);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+
+        getMenuInflater().inflate(R.menu.actionbar_item,menu);
+        return true;
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        if(id == R.id.action_logout){
+            Intent intent = new Intent(this,Login.class);
+            startActivity(intent);
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

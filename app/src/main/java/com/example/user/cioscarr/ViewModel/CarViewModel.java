@@ -16,16 +16,22 @@ public class CarViewModel extends AndroidViewModel {
     private List<String> allCarType;
     private LiveData<List<Car>> allCarTypeArea;
     private LiveData<List<Car>> allCarBySid;
+    private List<Car> car;
 
     public CarViewModel (Application application) {
         super(application);
         cRepository = new CarRepository(application);
         allCar = cRepository.getAllCar();
         allCarType = cRepository.getAllCarType();
+        car=cRepository.getCar();
     }
 
     public LiveData<List<Car>> getAllCar() {
         return allCar;
+    }
+
+    public List<Car> getCar() {
+        return car;
     }
 
     public LiveData<List<Car>> getAllCarTypeArea(String ctype, String carea)

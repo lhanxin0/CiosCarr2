@@ -30,10 +30,10 @@ public class Register extends AppCompatActivity {
         setTitle("Sign Up");
         setContentView(R.layout.activity_register);
 
-        uid = findViewById(R.id.txt_add_CType);
-        password = findViewById(R.id.txtAdd_car_name);
-        name = findViewById(R.id.txtAdd_car_color);
-        ic_num = findViewById(R.id.txtAdd_car_desc);
+        uid = findViewById(R.id.txt_add_ct);
+        password = findViewById(R.id.txt_add_cn);
+        name = findViewById(R.id.txt_add_cc);
+        ic_num = findViewById(R.id.txt_add_cd);
         contact = findViewById(R.id.txtCompany_address);
         email = findViewById(R.id.txtEmail);
 
@@ -86,6 +86,8 @@ public class Register extends AppCompatActivity {
         }
 
     }
+
+
 
 //    public void imageListener(View view) {
 //        Intent pickPhoto = new Intent(Intent.ACTION_PICK,

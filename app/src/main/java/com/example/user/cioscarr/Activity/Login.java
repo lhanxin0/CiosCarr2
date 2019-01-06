@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         txtId = findViewById(R.id.txtUsername);
-        txtPass = findViewById(R.id.txtAdd_car_name);
+        txtPass = findViewById(R.id.txt_add_cn);
 
         pvm = ViewModelProviders.of(this).get(PersonViewModel.class);
         svm = ViewModelProviders.of(this).get(SupplierViewModel.class);
@@ -64,8 +64,9 @@ public class Login extends AppCompatActivity {
 
         person = pvm.getPerson();
         if (id.equalsIgnoreCase("alpha") && pass.equalsIgnoreCase("alpha")) {
-            Intent intent = new Intent(this, Booking_detail.class);
+            Intent intent = new Intent(this, Supplier_list.class);
             startActivity(intent);
+            finish();
         } else {
             for (Person p : person) {
                 if (id.equals(p.getUid()) && pass.equals(p.getPassword())) {
