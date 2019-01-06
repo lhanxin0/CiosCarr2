@@ -14,6 +14,8 @@ public class CarRepository {
     private com.example.user.cioscarr.DAO.carDAO carDAO;
     private LiveData<List<Car>> allCar;
     private List<String> allCarType;
+    private LiveData<List<Car>> allCarTypeArea;
+
 
    public CarRepository(Application application) {
         PersonRoomDatabase db = PersonRoomDatabase.getDatabase(application);
@@ -27,6 +29,12 @@ public class CarRepository {
     public LiveData<List<Car>> getAllCar() {
         return allCar;
     }
+
+    public LiveData<List<Car>> getAllCarTypeArea(String ctype, String carea)
+    {
+        return carDAO.getAllCarByTypeArea(ctype, carea);
+    }
+
     public List<String> getAllCarType() {
         return allCarType;
     }

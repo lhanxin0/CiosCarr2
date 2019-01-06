@@ -19,7 +19,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/txtCarName"
+                android:id="@+id/txtCarName_frag"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -46,7 +46,7 @@
                 android:maxHeight="150dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtCarName"
+                app:layout_constraintTop_toBottomOf="@id/txtCarName_frag"
                 app:srcCompat="@mipmap/ic_launcher_round" />
 
             <View
@@ -57,10 +57,10 @@
                 android:background="?android:attr/listDivider"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
+                app:layout_constraintTop_toBottomOf="@id/txtPrice_frag" />
 
             <TextView
-                android:id="@+id/txtPrice"
+                android:id="@+id/txtPrice_frag"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"

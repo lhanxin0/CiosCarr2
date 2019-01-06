@@ -38,6 +38,8 @@ public class reservation extends main_navDrawer {
 
     private SupplierViewModel svm;
     private CarViewModel cvm;
+    private Spinner s;
+    private Spinner stype;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,13 +76,13 @@ public class reservation extends main_navDrawer {
        }
 
 
-        Spinner s = (Spinner) findViewById(R.id.spinnerArea);
+        s = (Spinner) findViewById(R.id.spinnerArea);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, area);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s.setAdapter(adapter);
 
-        Spinner stype = (Spinner) findViewById(R.id.spinnerCarType);
+        stype = (Spinner) findViewById(R.id.spinnerCarType);
         ArrayAdapter<String> adapterCType = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, cvm.getAllCarType());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -197,11 +199,11 @@ public class reservation extends main_navDrawer {
     }
 
     public void searchListener(View view) {
-
-
-
-
+        String cartype = stype.getSelectedItem().toString();
+        String cararea = s.getSelectedItem().toString();
         Intent intent = new Intent(this, Choose_car.class);
+        intent.putExtra("carType", cartype);
+        intent.putExtra("carArea", cararea);
         startActivity(intent);
 
 

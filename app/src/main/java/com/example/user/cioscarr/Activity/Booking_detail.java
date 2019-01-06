@@ -2,10 +2,8 @@ package com.example.user.cioscarr.Activity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -30,6 +28,7 @@ public class Booking_detail extends main_navDrawer {
 
         TabLayout tabLayout= (TabLayout)findViewById(R.id.tabLayout) ;
         tabLayout.setupWithViewPager(mViewPager);
+
 
 
     }

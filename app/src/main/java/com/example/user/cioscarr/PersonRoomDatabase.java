@@ -102,7 +102,7 @@ public abstract class PersonRoomDatabase extends RoomDatabase {
                     "213112313","gg","Setapak","Setapak"));
 
             cDao.insert(new Car("C0001",
-                    "Nissan","Sentra","grey","bestCar",
+                    "Nissan","Kancil","grey","bestCar",
                     2.0,"Available","S0001",null));
 
             ocDao.insert(new Order_car("OC0001","21/12/1111","21/12/1111", "11:11", "12:12","O0001", "C0001"));

@@ -3,6 +3,7 @@ package com.example.user.cioscarr.Activity;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,6 +20,7 @@ import java.util.List;
 
 public class Choose_car extends main_navDrawer {
     private CarViewModel cvm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,13 +41,16 @@ public class Choose_car extends main_navDrawer {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         cvm = ViewModelProviders.of(this).get(CarViewModel.class);
+        Intent intent = getIntent();
+        String cartype=intent.getStringExtra("carType");
+        String cararea=intent.getStringExtra("carArea");
 
-        cvm.getAllCar().observe(this, new Observer<List<Car>>() {
+        cvm.getAllCarTypeArea(cartype, cararea).observe(this, new Observer<List<Car>>() {
             @Override
             public void onChanged(@Nullable final List<Car> cars) {
                 // Update the cached copy of the words in the adapter.
                 //adapter.setID("P0002");
-//                adapter1.setWords(cars);
+               adapter1.setWords(cars);
             }
         });
 
