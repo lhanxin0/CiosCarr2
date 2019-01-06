@@ -15,6 +15,7 @@ public class CarRepository {
     private LiveData<List<Car>> allCar;
     private List<String> allCarType;
     private LiveData<List<Car>> allCarTypeArea;
+    private LiveData<List<Car>> allCarBySid;
 
 
    public CarRepository(Application application) {
@@ -33,6 +34,10 @@ public class CarRepository {
     public LiveData<List<Car>> getAllCarTypeArea(String ctype, String carea)
     {
         return carDAO.getAllCarByTypeArea(ctype, carea);
+    }
+
+    public LiveData<List<Car>> getAllCarBySid(String sid) {
+        return carDAO.getAllCarBySid(sid);
     }
 
     public List<String> getAllCarType() {
