@@ -16,6 +16,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.WordViewHo
 
     private final LayoutInflater pInflater;
     private List<Person> allPerson;
+    private String id;
    public PersonAdapter(Context context)
     {
         pInflater = LayoutInflater.from(context);
@@ -29,11 +30,15 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.WordViewHo
     @Override
     public void onBindViewHolder(WordViewHolder holder, int position) {
         if (allPerson != null) {
-            Person current = allPerson.get(position);
-            holder.wordItemView.setText(current.getName());
-            holder.wordItemView2.setText(current. getIc_num());
-            holder.wordItemView3.setText(current.getContact());
-            holder.wordItemView4.setText(current.getEmail());
+            //Person current = allPerson.get(position);
+            for(Person pp: allPerson) {
+                if(pp.getUid().equals(id)) {
+                    holder.wordItemView.setText(pp.getName());
+                    holder.wordItemView2.setText(pp.getIc_num());
+                    holder.wordItemView3.setText(pp.getContact());
+                    holder.wordItemView4.setText(pp.getEmail());
+                }
+            }
         } else {
             // Covers the case of data not being ready yet.
             holder.wordItemView.setText("No Word");
@@ -50,10 +55,12 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.WordViewHo
     @Override
     public int getItemCount() {
         if (allPerson != null)
-            return allPerson.size();
-        else return 0;
+            return 1;
+         else return 0;
     }
-
+    public void setID(String id){
+       this.id = id;
+    }
     public class WordViewHolder extends RecyclerView.ViewHolder {
         private final TextView wordItemView;
         private final TextView wordItemView2;

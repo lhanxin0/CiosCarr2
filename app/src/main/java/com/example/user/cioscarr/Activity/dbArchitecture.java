@@ -36,7 +36,7 @@ public class dbArchitecture extends AppCompatActivity {
                     @Override
                     public void onChanged(@Nullable final List<Person> person) {
                         // Update the cached copy of the words in the adapter.
-                        //adapter.setID("P0002");
+                        adapter.setID("lhanxin0");
                         adapter.setWords(person);
             }
         });
