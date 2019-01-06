@@ -42,4 +42,9 @@
     <string name="supplier_location">Supplier Location</string>
     <string name="your_supplier_details">Your Supplier Details</string>
     <string name="book_this_car">Book this car</string>
+    <string name="FpwHead">Please Enter Relevant Information</string>
+    <string name="submit">Submit</string>
+    <string name="fpwAlertID">Please enter id</string>
+    <string name="fpwAlertEmail">Please enter email</string>
+    <string name="fpwError">Error</string>
 </resources>
