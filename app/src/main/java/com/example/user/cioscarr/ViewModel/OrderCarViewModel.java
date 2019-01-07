@@ -5,6 +5,7 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
 import com.example.user.cioscarr.Repository.OrderCarRepository;
+import com.example.user.cioscarr.entity.Bh;
 import com.example.user.cioscarr.entity.Order_car;
 
 import java.util.List;
@@ -22,6 +23,11 @@ public class OrderCarViewModel extends AndroidViewModel {
 
     public LiveData<List<Order_car>> getAllOrder_car() {
         return allOrderCar;
+    }
+
+    public LiveData<List<Bh>> getBh(String pid)
+    {
+        return ocRepository.getBh(pid);
     }
 
     public void insert(Order_car order_car) {

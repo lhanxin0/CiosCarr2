@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         txtId = findViewById(R.id.txtUsername);
-        txtPass = findViewById(R.id.txtAdd_car_name);
+        txtPass = findViewById(R.id.txtPass);
 
         pvm = ViewModelProviders.of(this).get(PersonViewModel.class);
         svm = ViewModelProviders.of(this).get(SupplierViewModel.class);

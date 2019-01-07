@@ -22,6 +22,7 @@ import com.example.user.cioscarr.entity.Supplier;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class reservation extends main_navDrawer {
@@ -116,6 +117,7 @@ public class reservation extends main_navDrawer {
         stype.setAdapter(adapterCType);
 
 
+
         // Date picker
         final DatePickerDialog.OnDateSetListener take_date = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -129,6 +131,8 @@ public class reservation extends main_navDrawer {
 
         };
 
+
+
         final DatePickerDialog.OnDateSetListener return_date = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -139,13 +143,20 @@ public class reservation extends main_navDrawer {
             }
         };
 
+
+        final DatePickerDialog takeDate = new DatePickerDialog(reservation.this, take_date, myCalendar
+                .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                myCalendar.get(Calendar.DAY_OF_MONTH));
+        Date date = new Date();
     // Date onclick
         txtTake_Date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(reservation.this, take_date, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                takeDate.show();
+                takeDate.getDatePicker().setMinDate(new Date().getTime());
+//              new DatePickerDialog(reservation.this, take_date, myCalendar
+//                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+//                        myCalendar.get(Calendar.DAY_OF_MONTH)).getDatePicker().setMinDate().show();
 
             }
         });

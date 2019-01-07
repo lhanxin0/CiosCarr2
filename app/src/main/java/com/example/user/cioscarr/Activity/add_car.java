@@ -9,11 +9,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -25,10 +22,10 @@ import com.example.user.cioscarr.R;
 import com.example.user.cioscarr.ViewModel.CarViewModel;
 import com.example.user.cioscarr.entity.Car;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class add_car extends AppCompatActivity{
@@ -40,6 +37,7 @@ public class add_car extends AppCompatActivity{
     private TextView carDate;
     private EditText carPrice;
     private ImageButton imgBtn;
+    private  EditText carPlate;
 
     private String sid;
 
@@ -51,12 +49,13 @@ public class add_car extends AppCompatActivity{
         setContentView(R.layout.add_car);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imgBtn=findViewById(R.id.imageButton);
-        carType=findViewById(R.id.txt_add_ct);
-        carName=findViewById(R.id.txt_add_cn);
-        carColor=findViewById(R.id.txt_add_cc);
-        carDesc=findViewById(R.id.txt_add_cd);
-        carDate=findViewById(R.id.txtAdd_car_date);
-        carPrice=findViewById(R.id.txtAdd_car_price);
+        carType=findViewById(R.id.txtCarType);
+        carName=findViewById(R.id.txtCarname);
+        carColor=findViewById(R.id.txtCarColor);
+        carDesc=findViewById(R.id.txtCarDesc);
+        carDate=findViewById(R.id.txtCarPurDate);
+        carPrice=findViewById(R.id.txtCarPrice);
+        carPlate=findViewById(R.id.txtCarPlate);
 
 
 
@@ -71,13 +70,14 @@ public class add_car extends AppCompatActivity{
             }
 
         };
-
+final DatePickerDialog car_pur_date = new DatePickerDialog(add_car.this, take_date, myCalendar
+        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+        myCalendar.get(Calendar.DAY_OF_MONTH));
         carDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(add_car.this, take_date, myCalendar
-                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+                car_pur_date.show();
+                car_pur_date.getDatePicker().setMaxDate(new Date().getTime());
 
             }
         });
@@ -103,6 +103,7 @@ public class add_car extends AppCompatActivity{
         String carDesc=this.carDesc.getText().toString();
         String carDate=this.carDate.getText().toString();
         String carPrice=this.carPrice.getText().toString();
+        String carPlate=this.carPlate.getText().toString();
 
         if(carType.trim().isEmpty()){
             this.carType.setError("Please insert Car Type");
@@ -134,9 +135,27 @@ public class add_car extends AppCompatActivity{
             this.carPrice.requestFocus();
             return;
         }
+        if(carPlate.trim().isEmpty()){
+            this.carPlate.setError("Please insert Car Plate");
+            this.carPlate.requestFocus();
+            return;
+        }
         if(bitmap==null){
             Toast.makeText( this,"Please Upload image", Toast.LENGTH_SHORT).show();
             return;
+        }
+
+        CarViewModel cvm = ViewModelProviders.of(this).get(CarViewModel.class);
+        List<Car> cList = cvm.getCar();
+
+        if(!cList.isEmpty()){
+            for(Car c:cList){
+                if(carPlate.equals(c.getCar_plate_no())){
+                    this.carPlate.setError("Duplicate car plate");
+                    this.carPlate.requestFocus();
+                    return;
+                }
+            }
         }
 
 
@@ -149,12 +168,11 @@ public class add_car extends AppCompatActivity{
 
         try {
 
-            CarViewModel cvm = ViewModelProviders.of(this).get(CarViewModel.class);
-            List<Car> cList = cvm.getCar();
+
             if (!cList.isEmpty()) {
                 cid = cList.get(cList.size() - 1).getCar_id();
                 int idnum = Integer.parseInt(cid.substring(1)) + 1;
-                cid = "S" + String.format("%04d", idnum);
+                cid = "C" + String.format("%04d", idnum);
             }
             Double cp=Double.parseDouble(carPrice);
 
@@ -163,7 +181,7 @@ public class add_car extends AppCompatActivity{
             byte[] byteArray = stream.toByteArray();
             bitmap.recycle();
             Car car=null;
-            car = new Car(cid, carType, carDate, carName, carColor, carDesc, cp, "Available", sid, byteArray);
+            car = new Car(cid, carType, carDate,carPlate, carName, carColor, carDesc, cp, "Available", sid, byteArray);
             cvm.insert(car);
             Toast.makeText(this,"Added",Toast.LENGTH_LONG).show();
         }catch (Exception ex){

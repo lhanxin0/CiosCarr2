@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Register">
+    tools:context=".Activity.add_supplier">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/txt_add_ct"
+                android:id="@+id/txtSn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -35,7 +35,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/addSupplier_head" />
 
             <EditText
-                android:id="@+id/txtCompany_address"
+                android:id="@+id/txtComAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -48,27 +48,26 @@
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_add_cd" />
+                app:layout_constraintTop_toBottomOf="@+id/txtComContact" />
 
             <EditText
-                android:id="@+id/txt_add_cc"
+                android:id="@+id/txtComName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="28dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:ems="10"
                 android:hint="@string/company_name"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_add_cn" />
+                app:layout_constraintTop_toBottomOf="@+id/txtSupContact" />
 
             <EditText
-                android:id="@+id/txt_add_cd"
+                android:id="@+id/txtComContact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -82,10 +81,11 @@
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_add_cc" />
+                app:layout_constraintTop_toBottomOf="@+id/txtComName" />
+
 
             <EditText
-                android:id="@+id/txt_add_cn"
+                android:id="@+id/txtSupContact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -99,7 +99,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_add_ct" />
+                app:layout_constraintTop_toBottomOf="@+id/txtSn" />
 
             <EditText
                 android:id="@+id/txtSArea"
@@ -118,7 +118,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtCompany_address" />
+                app:layout_constraintTop_toBottomOf="@+id/txtComAdd" />
 
             <TextView
                 android:id="@+id/addSupplier_head"

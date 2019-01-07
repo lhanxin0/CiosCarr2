@@ -5,7 +5,8 @@
     android:orientation="vertical"
     android:padding="8dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    tools:context=".Activity.Supplier_list">
 
 
     <TableLayout

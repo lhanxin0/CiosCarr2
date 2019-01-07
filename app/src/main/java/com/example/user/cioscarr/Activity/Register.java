@@ -35,12 +35,12 @@ public class Register extends AppCompatActivity {
         setTitle("Sign Up");
         setContentView(R.layout.activity_register);
 
-        uid = findViewById(R.id.txt_add_ct);
-        password = findViewById(R.id.txt_add_cn);
-        name = findViewById(R.id.txt_add_cc);
-        ic_num = findViewById(R.id.txt_add_cd);
-        contact = findViewById(R.id.txtCompany_address);
-        email = findViewById(R.id.txtEmail);
+        uid = findViewById(R.id.RegUsername);
+        password = findViewById(R.id.RegPass);
+        name = findViewById(R.id.RegName);
+        ic_num = findViewById(R.id.RegIC);
+        contact = findViewById(R.id.RegContact);
+        email = findViewById(R.id.RegEmail);
 
         pvm = ViewModelProviders.of(this).get(PersonViewModel.class);
 

@@ -15,7 +15,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/txt_add_ct"
+                android:id="@+id/RegUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -29,10 +29,10 @@
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/addSupplier_head" />
+                app:layout_constraintTop_toBottomOf="@+id/RegSignUpHead" />
 
             <EditText
-                android:id="@+id/txtCompany_address"
+                android:id="@+id/RegContact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -46,10 +46,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_add_cd" />
+                app:layout_constraintTop_toBottomOf="@+id/RegIC" />
 
             <EditText
-                android:id="@+id/txt_add_cc"
+                android:id="@+id/RegName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -63,10 +63,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_add_cn" />
+                app:layout_constraintTop_toBottomOf="@+id/RegPass" />
 
             <EditText
-                android:id="@+id/txt_add_cd"
+                android:id="@+id/RegIC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -80,10 +80,10 @@
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_add_cc" />
+                app:layout_constraintTop_toBottomOf="@+id/RegName" />
 
             <EditText
-                android:id="@+id/txt_add_cn"
+                android:id="@+id/RegPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -97,10 +97,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_add_ct" />
+                app:layout_constraintTop_toBottomOf="@+id/RegUsername" />
 
             <EditText
-                android:id="@+id/txtEmail"
+                android:id="@+id/RegEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="47dp"
                 android:layout_marginStart="8dp"
@@ -114,10 +114,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtCompany_address" />
+                app:layout_constraintTop_toBottomOf="@+id/RegContact" />
 
             <TextView
-                android:id="@+id/addSupplier_head"
+                android:id="@+id/RegSignUpHead"
                 android:layout_width="211dp"
                 android:layout_height="29dp"
                 android:layout_marginStart="8dp"

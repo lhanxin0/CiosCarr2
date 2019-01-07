@@ -107,7 +107,7 @@ public abstract class PersonRoomDatabase extends RoomDatabase {
 
             ocDao.insert(new Order_car("OC0001","21/12/1111","21/12/1111", "11:11", "12:12","O0001", "C0001"));
 
-            oDao.insert(new Order("O0001",3.0,"lhanxin0","OC0001"));
+            oDao.insert(new Order("O0001",3.0,"HanXin","OC0001"));
 
 
             pDao.insert(new Payment_for_db("P0001","Credit", "21/12/1111", "4848100049641080", "Paid", "O0001"));

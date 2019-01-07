@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 
 import com.example.user.cioscarr.DAO.order_carDAO;
 import com.example.user.cioscarr.PersonRoomDatabase;
+import com.example.user.cioscarr.entity.Bh;
 import com.example.user.cioscarr.entity.Order_car;
 
 import java.util.List;
@@ -26,6 +27,11 @@ public class OrderCarRepository {
     }
     public void insert (Order_car orderCar) {
         new OrderCarRepository.insertAsyncTask(order_carDAO).execute(orderCar);
+    }
+
+    public LiveData<List<Bh>> getBh(String pid)
+    {
+        return order_carDAO.getBh(pid);
     }
 
     private static class insertAsyncTask extends AsyncTask<Order_car, Void, Void> {

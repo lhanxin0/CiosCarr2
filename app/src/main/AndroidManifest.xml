@@ -50,13 +50,17 @@
         <activity
             android:name=".Activity.Choose_car"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activity.Supplier_list"/>
-        <activity android:name=".Activity.add_supplier"/>
-        <activity android:name=".Activity.Car_list"/>
-        <activity android:name=".Activity.add_car"/>
-        <activity android:name=".Activity.dbArchitecture"
-            android:theme="@style/AppTheme.NoActionBar"    />
+        <activity android:name=".Activity.Supplier_list" />
+        <activity android:name=".Activity.add_supplier" />
+        <activity android:name=".Activity.Car_list" />
+        <activity android:name=".Activity.add_car" />
+        <activity
+            android:name=".Activity.dbArchitecture"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activity.recycleView" />
+        <activity android:name=".Activity.booking_history_recycle"
+            android:theme="@style/AppTheme.NoActionBar"
+           /> >
     </application>
 
 </manifest>

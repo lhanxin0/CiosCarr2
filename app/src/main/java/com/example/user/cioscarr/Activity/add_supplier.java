@@ -2,13 +2,10 @@ package com.example.user.cioscarr.Activity;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -35,11 +32,11 @@ public class add_supplier extends AppCompatActivity {
         setTitle("Add new supplier");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        supplierName=findViewById(R.id.txt_add_ct);
-        supplierContact=findViewById(R.id.txt_add_cn);
-        supplierCom_name=findViewById(R.id.txt_add_cc);
-        supplierCom_add=findViewById(R.id.txtCompany_address);
-        supplierCom_contact=findViewById(R.id.txt_add_cd);
+        supplierName=findViewById(R.id.txtSn);
+        supplierContact=findViewById(R.id.txtSupContact);
+        supplierCom_name=findViewById(R.id.txtComName);
+        supplierCom_add=findViewById(R.id.txtComAdd);
+        supplierCom_contact=findViewById(R.id.txtComContact);
         supplierArea=findViewById(R.id.txtSArea);
 
 

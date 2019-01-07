@@ -92,8 +92,9 @@ public class main_navDrawer extends AppCompatActivity
           //  startActivity(intent);
 
         } else if (id == R.id.nav_history) {
-            Intent intent = new Intent(this,reservation.class);
-           // startActivity(intent);
+            Intent intent = new Intent(this,booking_history_recycle.class);
+            intent.putExtra("customerID",custid);
+            startActivity(intent);
         } else if (id == R.id.nav_contact) {
             Intent intent = new Intent(this,reservation.class);
             //startActivity(intent);
