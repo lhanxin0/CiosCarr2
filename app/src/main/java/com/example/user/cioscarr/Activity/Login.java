@@ -52,7 +52,7 @@ public class Login extends AppCompatActivity {
     }
 
     public static final String Extra_Message1 = "com.example.user.cioscarr.Extra_Message1";
-    public static final String Extra_Message = "com.example.user.cioscarr.Extra_Message";
+    public static final String Extra_Message = "com.example.user.cioscarr.Extra_Message1";
     private List<Person> person;
 
 
@@ -64,7 +64,7 @@ public class Login extends AppCompatActivity {
 
         person = pvm.getPerson();
         if (id.equalsIgnoreCase("alpha") && pass.equalsIgnoreCase("alpha")) {
-            Intent intent = new Intent(this, reservation.class);
+            Intent intent = new Intent(this, Supplier_list.class);
             startActivity(intent);
         } else {
             for (Person p : person) {

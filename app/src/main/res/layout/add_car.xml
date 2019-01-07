@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Register">
+    tools:context=".Activity.add_car">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/txt_add_CType"
+                android:id="@+id/txt_add_ct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -34,7 +35,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageButton" />
 
             <EditText
-                android:id="@+id/txtAdd_car_color"
+                android:id="@+id/txt_add_cc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -48,10 +49,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAdd_car_name" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_add_cn" />
 
             <EditText
-                android:id="@+id/txtAdd_car_desc"
+                android:id="@+id/txt_add_cd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -61,14 +62,14 @@
                 android:layout_marginRight="8dp"
                 android:ems="10"
                 android:hint="Car Description"
-                android:inputType="phone"
+                android:inputType="textPersonName"
                 android:textColor="@android:color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAdd_car_color" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_add_cc" />
 
             <EditText
-                android:id="@+id/txtAdd_car_name"
+                android:id="@+id/txt_add_cn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -78,11 +79,11 @@
                 android:layout_marginRight="8dp"
                 android:ems="10"
                 android:hint="Car Name"
-                android:inputType="phone"
+                android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_add_CType" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_add_ct" />
 
             <EditText
                 android:id="@+id/txtAdd_car_price"
@@ -95,7 +96,7 @@
                 android:layout_marginRight="8dp"
                 android:ems="10"
                 android:hint="Price"
-                android:inputType="textPersonName"
+                android:inputType="number|numberDecimal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtAdd_car_date" />
@@ -109,12 +110,13 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:gravity="left|center"
                 android:text="Car Purchase Date"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtAdd_car_desc" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_add_cd" />
 
             <ImageButton
                 android:id="@+id/imageButton"
@@ -126,6 +128,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:onClick="uploadCarListener"
+                android:src="@drawable/logo"
                 android:background="@drawable/round_border"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -141,6 +145,7 @@
         android:layout_width="0dp"
         android:layout_height="62dp"
         android:background="#5BC236"
+        android:onClick="registerNewCar"
         android:text="@string/add"
         android:textColor="@android:color/white"
         android:textSize="20sp"
